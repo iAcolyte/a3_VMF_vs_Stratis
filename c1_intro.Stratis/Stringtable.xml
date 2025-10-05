@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project name="PC">
+	<Package name="VMF_STR">
+		<Container name="Identities">
+			<Key ID="STR_VMF_Identities_Gromov">
+				<Russian>Громов</Russian>
+				<Original>Gromov</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Griev_Colonel">
+				<Russian>Полковник Гриев</Russian>
+				<Original>Colonel Griev</Original>
+			</Key>	
+		</Container>
+		<Container name="C1_Intro">
+			<Key ID="STR_VMF_C1_Intro_Mission_Name">
+				<Russian>Брифинг</Russian>
+				<Original>Briefing</Original>
+			</Key>		
+			<Key ID="STR_VMF_C1_Intro_Mission_Description">
+				<Russian>Командира 1-й группы 137 ОМРП СпН на Черноморском флоте, майора морской пехоты Громова Алексея Витальевича срочно отозвали из отпуска и вызвали на брифинг.</Russian>
+				<Original>Briefing</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence1">
+				<Russian>Товарищ полковник, майор Громов по вашему приказанию прибыл!</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence2">
+				<Russian>Вольно, Алексей Витальевич. Вас уже ввели в курс дела?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence3">
+				<Russian>Нет, товарищ полковник.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence4">
+				<Russian>Просто Константин Павлович... **Он указываете на карту**. Агиос Эфстратиос или просто Стратис. Знаком этот остров?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence5">
+				<Russian>Да, Константин Павлович. Остров на выходе из Босфора, на маршруте из Чёрного в Средиземное море.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence6">
+				<Russian>Точно так, Алексей Витальевич. Полагаю, вы в курсе международной обстановки. Назревает война. Мы чудом избежали худшего в 91-м, и сейчас НАТО открыто перешло к провокациям на границах.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence7">
+				<Russian>Всё, что я скажу вам дальше, проходит под грифом особой важности. Вы понимаете, что это значит?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence8">
+				<Russian>Да, Константин Павлович.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence9">
+				<Russian>Оперативный Штаб ГРУ ставит задачу вашему подразделению высадиться на остров Стратис, провести разведку, оценить наличиствующие силы и средства вероятного противника. При поступлении соответствующего распоряжения - произвести диверсии. Приоритетная цель - ЗРК противника.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence10">
+				<Russian>На время операции присваеваем вам позывной 'Дельфин', позывной командующего операции 'Нептун'. Проникновение на остров осуществите с использованием торгового судна. Войдёте в акваторию острова ночью на надувных лодках, дальше под водой с аквалангами.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence11">
+				<Russian>На острове действует наш оперативник, позывной 'Касатка'. Он будет сопровождать вашу операцию. 'Касатка' не может покидать город из-за введённых ограничений и комендантского часа, так что сеансы связи проведёте в установленное время.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence12">
+				<Russian>Подробности в этой папке. Вопросы есть, Алексей Витальевич?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence13">
+				<Russian>Да, Константин Павлович. Какое расчётное время на операцию? Мы сможем взять с собой провизию от трёх дней до недели. Чем больше провизии, тем меньше полезной нагрузки.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence14">
+				<Russian>Берите на неделю. Это голая скала, добыть там что-то может быть проблематично. Ещё вопросы?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence15">
+				<Russian>Как и когда будет происходить эвакуация с острова?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence16">
+				<Russian>Всё зависит от того, как будут разворачиваться события. В лучшем случае, через неделю вы отступите тем же путём, которым и прибыли. Корабль, способный подобрать вас, как минимум дважды будет проходить по маршруту. Если начнётся эскалация, то помимо корабля будет ещё два варианта. Если вы уничтожите ЗРК и ПВО малого радиуса действия, вас заберёт вертолёт. В худшем случае, вы останетесь на острове до прихода основных сил.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence17">
+				<Russian>Принято, вопросов больше не имею.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence18">
+				<Russian>Замечатечательно, Алексей Витальевич. **Полковник достал карандаш и склонился над картой**. Тогда внимание на карту.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence19">
+				<Russian>Наши аналитики проанализировали остров и предлагаю два места для проникновения. Здесь...</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence20">
+				<Russian>... И здесь. Какой выбрать - решайте сами по месту.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence21">
+				<Russian>Судя по аэрофотоснимкам севернее этих мест располагается стрелковый полигон. Вероятно, здесь же располагаются и противокорабельные ракеты. Кодовое обозначение зоны - 'Анна'.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence22">
+				<Russian>Поисковый радар и предположительно ЗРК дальнего радиуса действия расположен здесь. Кодовое обозначение зоны - 'Борис'.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence23">
+				<Russian>Крупнейшая военная база на острове и аэродром находятся здесь. Кодовое обозначение зоны - 'Владимир'.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence24">
+				<Russian>Город Стратис и прилегающая к нему военная база. В городе в основном живут семьи военных, туристов нет. Здесь же находится 'Касатка'. Кодовое обозначение зоны - 'Галина'.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence25">
+				<Russian>Также на фотоснимках мы обнаружили базу здесь. Кодовое обозначение зоны - 'Дарья'.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence26">
+				<Russian>И здесь. Кодовое обозначение зоны - 'Игорь'.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence27">
+				<Russian>Вероятно есть что-то ещё, но по аэрофотоснимкам разобрать больше не получилось. Ваша основная задача - уточнение полученной по снимкам информации. Необходимо разведать численность и оснащённость личного состава противника.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence28">
+				<Russian>Гарнизон по большей части представлен регулярной греческой армией, а вот ЗРК скорее всего обслуживают американские военнослужащие. До получение приказа вам запрещено открывать огонь и вступать бой. Если вас обнаружат - отступите, скройтесь, ожидайте дня эвакуации и эвакуируйтесь. Приказа умирать там у вас нет.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence29">
+				<Russian>Но вы должны понимать, что морпехи, которые будут штурмовать этот остров, рассчитывают на вашу информацию. И в ваших силах спасти чьи-то жизни. Так что постарайтесь, товарищ майор. У вас три дня на сборы. Ознакомьтесь с документами, проинструктируйте ваших людей. На этом всё. Родина на вас рассчитывает.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence30">
+				<Russian>Служу Советскому союзу! Сделаем всё от нас зависящее, товарищ полковник.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_Intro_Sentence31">
+				<Russian>Тогда не смею вас более задерживаться. Будем надеяться на лучший сценарий. Можете идти, товарищ майор.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+		</Container>
+	</Package>
+</Project>

@@ -4,7 +4,7 @@ class CfgIdentities
 	{
 		face = "WhiteHead_07";
 		glasses = "";
-		name = "Громов";
+		name = "$STR_VMF_Identities_Gromov";
 		nameSound = "Gromov";
 		pitch = 1.0;
 		speaker = "Male03RUS";
@@ -13,7 +13,7 @@ class CfgIdentities
 	{
 		face = "WhiteHead_07";
 		glasses = "";
-		name = "Полковник Гриев";
+		name = "$STR_VMF_Identities_Griev_Colonel";
 		nameSound = "Griev";
 		pitch = 1.0;
 		speaker = "Male03RUS";

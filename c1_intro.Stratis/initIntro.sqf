@@ -33,7 +33,7 @@ private _tellWithSubtitle = {
 	player groupChat _actor;
 	_speaker = missionNamespace getVariable(_actor);
 	_speaker kbTell [player, _topic, _sentence];
-	[name _speaker, _subtitle] spawn Bis_fnc_showSubtitle;
+	[name _speaker, localize _subtitle] spawn Bis_fnc_showSubtitle;
 	waitUntil { _speaker kbWasSaid [player, _topic, _sentence, 3]; }
 };
 
@@ -50,6 +50,7 @@ private _tellWithSubtitle = {
 mapAnimAdd[0.5,0.78,position gromov];
 mapAnimAdd[0.5,0.8,position gromov];
 mapAnimCommit;
+waitUntil { griev kbWasSaid [player, "Briefing", "Sentence4", 3]; };
 
 ["Briefing", "Sentence5"] call _tellWithSubtitle;
 
