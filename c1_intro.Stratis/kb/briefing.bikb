@@ -1,0 +1,241 @@
+class Sentences
+{
+	class Sentence1
+	{
+		text = "";
+		textPlain = "Товарищ полковник, майор Громов по вашему приказанию прибыл!"
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+	class Sentence2
+	{
+		text = "";
+		textPlain = "Вольно, Алексей Витальевич. Вас уже ввели в курс дела?"
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence3
+	{
+		text = "";
+		textPlain = "Нет, товарищ полковник.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+	class Sentence4
+	{
+		text = "";
+		textPlain = "Просто Константин Павлович... **Он указываете на карту**. Агиос Эфстратиос или просто Стратис. Знаком этот остров?";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence5
+	{
+		text = "";
+		textPlain = "Да, Константин Павлович. Остров на выходе из Босфора, на маршруте из Чёрного в Средиземное море.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+	class Sentence6
+	{
+		text = "";
+		textPlain = "Точно так, Алексей Витальевич. Полагаю, вы в курсе международной обстановки. Назревает война. Мы чудом избежали развала СССР в 91-м, и сейчас НАТО перешло к провокациям на границах.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence7
+	{
+		text = "";
+		textPlain = "Всё, что я скажу вам дальше, проходит под грифом Особой Важности. Вы понимаете, что это значит?";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence8
+	{
+		text = "";
+		textPlain = "Да, Константин Павлович.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+	class Sentence9
+	{
+		text = "";
+		textPlain = "Оперативный Штаб ГРУ ставит задачу вашему подразделению высадиться на остров Стратис, провести разведку, оценить наличиствующие силы и средства вероятного противника. При поступлении соответствующего распоряжения - произвести диверсии. Приоритетная цель - ЗРК противника";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence10 {
+		text = "";
+		textPlain = "На время операции присваеваем вам позывной 'Дельфин', позывной командующего операции 'Нептун'. Проникновение на остров осуществите с использованием торгового судна.Войдёте в акваторию острова ночью на надувных лодках, дальше под водой с аквалангами.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence11 {
+		text = "";
+		textPlain = "На острове действует наш оперативник, позывной 'Касатка'. Он будет сопровождать вашу операцию. 'Касатка' не может покидать город из-за введённых ограничений и комендантского часа, так что сеансы связи проведёте в установленное время.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence12 {
+		text = "";
+		textPlain = "Подробности в этой папке. Вопросы есть, Алексей Витальевич?";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence13 {
+		text = "";
+		textPlain = "Да, Константин Павлович. Какое расчётное время на операцию? Мы сможем взять с собой провизию от трёх дней до недели. Чем больше провизии, тем меньше полезной нагрузки.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+	class Sentence14 {
+		text = "";
+		textPlain = "Берите на неделю. Это голая скала, добыть там что-то может быть проблематично. Ещё вопросы?";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence15 {
+		text = "";
+		textPlain = "Как и когда будет происходить эвакуация с острова?";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+	class Sentence16 {
+		text = "";
+		textPlain = "Тут всё зависит от того, как будут разворачиваться события. В лучшем случае, через неделю вы отступите тем же путём, которым и прибыли. Корабль, способный подобрать вас, как минимум дважды будет проходить по маршруту. Если начнётся эскалация, то помимо корабля будет ещё два варианта. Если вы уничтожите ЗРК и ПВО малого радиуса действия, вас заберёт вертолёт. В хужшем случае, вы останетесь на острове до прихода основных сил.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence17 {
+		text = "";
+		textPlain = "Принято, вопросов больше не имею.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+
+	class Sentence18 {
+		text = "";
+		textPlain = "Замечатечательно, Алексей Витальевич. Тогда внимание на карту. **Он достал карандаш**";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+
+	class Sentence19 {
+		text = "";
+		textPlain = "Наши аналитики проанализировали остров и предлагаю два места для проникновения... Здесь...";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence20 {
+		text = "";
+		textPlain = "... И здесь. Какой выбрать - решайте сами по месту.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence21 {
+		text = "";
+		textPlain = "Судя по аэрофотоснимкам севернее этих мест располагается стрелковый полигон. Вероятно, здесь же располагаются и противокорабельные ракеты. Кодовое обозначение зоны - 'Анна'";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence22 {
+		text = "";
+		textPlain = "Поисковый радар и предположительно ЗРК дальнего радиуса действия расположен здесь. Кодовое обозначение зоны - 'Борис'";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence23 {
+		text = "";
+		textPlain = "Крупнейшая военная база на острове и аэродром находятся здесь. Кодовое обозначение зоны - 'Владимир'";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence24 {
+		text = "";
+		textPlain = "Город Стратис и прилегающая к нему военная база. В городе в основном живут семьи военных, туристов нет. Здесь же находится 'Касатка'. Кодовое обозначение зоны - 'Галина'";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+
+	class Sentence25 {
+		text = "";
+		textPlain = "Также на фотоснимках мы обнаружили базу здесь. Кодовое обозначение зоны - 'Дарья'";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+	class Sentence26 {
+		text = "";
+		textPlain = "И здесь. Кодовое обозначение зоны - 'Игорь'";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+
+	class Sentence27 {
+		text = "";
+		textPlain = "Вероятно есть что-то ещё, но по аэрофотоснимкам разобрать больше не получилось. Ваша основная задача - уточнение полученной по снимкам информации. Необходимо разведать численность и оснащённость личного состава противника.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+
+	class Sentence28 {
+		text = "";
+		textPlain = "Гарнизон по большей части представлен регулярной греческой армией, а вот ЗРК скорее всего обслуживают американские военнослужащие. До получение приказа вам запрещено открывать огонь и вступать бой. Если вас обнаружат - отступите, скройтесь, ожидайте дня эвакуации и эвакуируйтесь. Приказа умирать там у вас нет.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+
+	class Sentence29 {
+		text = "";
+		textPlain = " Но вы должны понимать, что морпехи, которые будут штурмовать этот остров, рассчитывают на вашу информацию. И в ваших силах спасти чьи-то жизни. Так что постарайтесь, товарищ майор. У вас три дня на сборы. Ознакомьтесь с документами, проинструктируйте ваших людей. На этом всё. Родина на вас рассчитывает.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+
+	class Sentence30 {
+		text = "";
+		textPlain = "Служу Советскому союзу! Сделаем всё от нас зависящее, товарищ полковник.";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+	
+	class Sentence31 {
+		text = "";
+		textPlain = "Тогда не смею вас более задерживаться. Будем надеяться на лучший сценарий. Можете идти, товарищ майор";
+		speech[] = { "\speech\silence_5sec.wav" };
+		class Arguments {};
+		actor = "griev";
+	};
+};
+class Arguments {};
+class Special {};
+startWithVocal[] = { hour };
+startWithConsonant[] = { europe, university };

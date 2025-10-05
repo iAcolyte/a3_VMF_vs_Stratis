@@ -1,0 +1,33 @@
+class CfgIdentities
+{
+	class Gromov
+	{
+		face = "WhiteHead_07";
+		glasses = "";
+		name = "Громов";
+		nameSound = "Gromov";
+		pitch = 1.0;
+		speaker = "Male03RUS";
+	};
+	class Griev
+	{
+		face = "WhiteHead_07";
+		glasses = "";
+		name = "Полковник Гриев";
+		nameSound = "Griev";
+		pitch = 1.0;
+		speaker = "Male03RUS";
+	};
+};
+
+class CfgSentences
+{
+	class VMF_C1_Intro
+	{
+		class Briefing
+		{
+			file = "kb\briefing.bikb";
+			#include "kb\briefing.bikb" // avoids a double declaration
+		};
+	};
+};
