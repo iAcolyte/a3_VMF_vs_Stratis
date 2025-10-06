@@ -1,0 +1,22 @@
+class CfgIdentities
+{
+	class Gromov
+	{
+		face = "WhiteHead_07";
+		glasses = "";
+		name = "$STR_VMF_Identities_Gromov";
+		nameSound = "Gromov";
+		pitch = 1.0;
+		speaker = "Male03RUS";
+	};
+	class Griev
+	{
+		face = "WhiteHead_07";
+		glasses = "";
+		name = "$STR_VMF_Identities_Griev_Colonel";
+		nameSound = "Griev";
+		pitch = 1.0;
+		speaker = "Male03RUS";
+	};
+	
+};

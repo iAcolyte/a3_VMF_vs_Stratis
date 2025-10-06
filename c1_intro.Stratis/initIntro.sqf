@@ -91,7 +91,6 @@ waitUntil { griev kbWasSaid [player, "Briefing", "Sentence19", 3]; };
 
 ["Briefing", "Sentence20"] spawn _tellWithSubtitle;
 private _pos = [markerPos "marker_1", markerPos "marker_2"] call _getMiddle;
-hint str(_pos);
 [_pos] spawn {
 	mapAnimAdd[1,0.2, _this # 0];
 	mapAnimAdd[1,0.1,markerPos "marker_2"];
@@ -181,4 +180,4 @@ mapAnimCommit;
 ["Briefing", "Sentence30"] call _tellWithSubtitle;
 ["Briefing", "Sentence31"] call _tellWithSubtitle;
 sleep 5;
-[0, "BLACK", 5, 1,"","END6"] spawn BIS_fnc_fadeEffect;
+[0, "WHITE", 5, 1,"","END6"] spawn BIS_fnc_fadeEffect;

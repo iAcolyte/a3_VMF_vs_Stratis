@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project name="PC">
+	<Package name="VMF_STR">
+		<Container name="Identities">
+			<Key ID="STR_VMF_Identities_Gromov">
+				<Russian>Громов</Russian>
+				<Original>Gromov</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Griev_Colonel">
+				<Russian>Полковник Гриев</Russian>
+				<Original>Colonel Griev</Original>
+			</Key>	
+		</Container>
+	</Package>
+</Project>

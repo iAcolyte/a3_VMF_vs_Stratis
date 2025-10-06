@@ -2,25 +2,25 @@ class Sentences
 {
 	class Sentence1
 	{
-		text = "";
+		text = "$STR_VMF_C1_Intro_Sentence1";
 		textPlain = "@STR_VMF_C1_Intro_Sentence1"
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence1.wav" };
 		class Arguments {};
 		actor = "gromov";
 	};
 	class Sentence2
 	{
-		text = "";
+		text = "$STR_VMF_C1_Intro_Sentence2";
 		textPlain = "@STR_VMF_C1_Intro_Sentence2"
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence2.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence3
 	{
-		text = "";
+		text = "$STR_VMF_C1_Intro_Sentence3";
 		textPlain = "@STR_VMF_C1_Intro_Sentence3";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence3.wav" };
 		class Arguments {};
 		actor = "gromov";
 	};
@@ -28,7 +28,7 @@ class Sentences
 	{
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence4";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence4.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -36,7 +36,7 @@ class Sentences
 	{
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence5";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence5.wav" };
 		class Arguments {};
 		actor = "gromov";
 	};
@@ -44,7 +44,7 @@ class Sentences
 	{
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence6";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence6.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -52,7 +52,7 @@ class Sentences
 	{
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence7";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence7.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -60,7 +60,7 @@ class Sentences
 	{
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence8";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence8.wav" };
 		class Arguments {};
 		actor = "gromov";
 	};
@@ -68,63 +68,63 @@ class Sentences
 	{
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence9";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence9.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence10 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence10";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence10.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence11 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence11";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence11.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence12 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence12";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence12.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence13 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence13";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence13.wav" };
 		class Arguments {};
 		actor = "gromov";
 	};
 	class Sentence14 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence14";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence14.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence15 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence15";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence15.wav" };
 		class Arguments {};
 		actor = "gromov";
 	};
 	class Sentence16 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence16";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence16.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence17 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence17";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence17.wav" };
 		class Arguments {};
 		actor = "gromov";
 	};
@@ -132,7 +132,7 @@ class Sentences
 	class Sentence18 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence18";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence18.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -140,42 +140,42 @@ class Sentences
 	class Sentence19 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence19";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence19.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence20 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence20";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence20.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence21 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence21";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence21.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence22 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence22";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence22.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence23 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence23";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence23.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence24 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence24";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence24.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -183,14 +183,14 @@ class Sentences
 	class Sentence25 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence25";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence25.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
 	class Sentence26 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence26";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence26.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -198,7 +198,7 @@ class Sentences
 	class Sentence27 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence27";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence27.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -206,7 +206,7 @@ class Sentences
 	class Sentence28 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence28";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence28.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -214,7 +214,7 @@ class Sentences
 	class Sentence29 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence29";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence29.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
@@ -222,7 +222,7 @@ class Sentences
 	class Sentence30 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence30";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence30.wav" };
 		class Arguments {};
 		actor = "gromov";
 	};
@@ -230,7 +230,7 @@ class Sentences
 	class Sentence31 {
 		text = "";
 		textPlain = "@STR_VMF_C1_Intro_Sentence31";
-		speech[] = { "\speech\silence_5sec.wav" };
+		speech[] = { "\speech\sentence31.wav" };
 		class Arguments {};
 		actor = "griev";
 	};
