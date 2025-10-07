@@ -1,17 +1,3 @@
-ShowHUD false;
-enableEnvironment false;
-gromov setIdentity "Gromov";
-griev setIdentity "Griev";
-
-gromov	kbAddTopic ["Briefing", "kb\briefing.bikb"];
-griev	kbAddTopic ["Briefing", "kb\briefing.bikb"];
-[1, "BLACK", 5, 1] spawn BIS_fnc_fadeEffect;
-openMap true;
-sleep 0.1;
-openMap false;
-forceMap true;
-mapAnimAdd[0,0.8,position gromov];
-mapAnimCommit;
 
 private _getMiddle = {
 	_coordinates = [0,0,0];
@@ -30,16 +16,40 @@ private _tellWithSubtitle = {
 	params ["_topic","_sentence"];
 	private _subtitle = getText (missionConfigFile >> "CfgSentences" >> "VMF_C1_Intro" >> _topic >> "Sentences" >> _sentence >> "textPlain");
 	private _actor = getText (missionConfigFile >> "CfgSentences" >> "VMF_C1_Intro" >> _topic >> "Sentences" >> _sentence >> "actor");
-	player groupChat _actor;
 	_speaker = missionNamespace getVariable(_actor);
 	_speaker kbTell [player, _topic, _sentence];
-	[name _speaker, localize _subtitle] spawn Bis_fnc_showSubtitle;
-	waitUntil { _speaker kbWasSaid [player, _topic, _sentence, 3]; }
+	sleep 0.1;
+	while {!(_speaker kbWasSaid [player, _topic, _sentence, 3])} do {
+		[name _speaker, localize _subtitle] spawn Bis_fnc_showSubtitle;
+		sleep 1;
+	};
+	hint "end";
 };
 
 
-["Briefing", "Sentence1"] call _tellWithSubtitle;
+//ShowHUD true;
+enableEnvironment false;
 
+gromov setIdentity "Gromov";
+griev setIdentity "Griev";
+
+gromov	kbAddTopic ["Briefing", "kb\briefing.bikb"];
+griev	kbAddTopic ["Briefing", "kb\briefing.bikb"];
+[1, "BLACK", 5, 0] spawn BIS_fnc_fadeEffect;
+openMap[true,false];
+_handler = addMissionEventHandler ["Map", {
+	params ["_mapIsOpened", "_mapIsForced"];
+	if (not _mapIsOpened) exitWith {
+		endMission "END1";
+	};
+}];
+
+mapAnimAdd[0,0.8,position gromov];
+mapAnimCommit;
+
+sleep 2;
+
+["Briefing", "Sentence1"] call _tellWithSubtitle;
 
 ["Briefing", "Sentence2"] call _tellWithSubtitle;
 
@@ -179,5 +189,5 @@ mapAnimCommit;
 ["Briefing", "Sentence29"] call _tellWithSubtitle;
 ["Briefing", "Sentence30"] call _tellWithSubtitle;
 ["Briefing", "Sentence31"] call _tellWithSubtitle;
-sleep 5;
-[0, "WHITE", 5, 1,"","END6"] spawn BIS_fnc_fadeEffect;
+sleep 1;
+[0, "BLACK", 5, 1,"","END1"] spawn BIS_fnc_fadeEffect;

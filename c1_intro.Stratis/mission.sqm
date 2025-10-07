@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=46;
+		nextID=68;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4103.0229,145.5421,4144.478};
-		dir[]={0.67874825,-0.45445213,0.57686573};
-		up[]={0.34628266,0.89077121,0.2943044};
-		aside[]={0.64760268,0,-0.76197833};
+		pos[]={4115.4521,150.10275,4147.7324};
+		dir[]={-0.8284328,-0.55915076,0.032396279};
+		up[]={-0.55872381,0.82906604,0.021849174};
+		aside[]={0.039075639,0,0.99923635};
 	};
 };
 binarizationWanted=0;
@@ -62,7 +62,8 @@ randomSeed=16503440;
 class ScenarioData
 {
 	author="Acolyte";
-	overviewTextLocked="@STR_VMF_C1_Intro_Mission_Description";
+	overviewText="Командира 1-й группы 137 ОМРП СпН на Черноморском флоте, майора морской пехоты Громова Алексея Витальевича срочно отозвали из отпуска и вызвали на брифинг.";
+	overviewTextLocked="locked";
 	onLoadMission="@STR_VMF_C1_Intro_Mission_Description";
 	briefing=0;
 	debriefing=0;
@@ -115,6 +116,30 @@ class Intro
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
+};
+class Mission
+{
+	class Intel
+	{
+		briefingName="@STR_VMF_C1_Intro_Mission_Name";
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
 	class Entities
 	{
 		items=17;
@@ -130,7 +155,7 @@ class Intro
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4106.3159,142.76402,4145.6699};
+						position[]={4104.4893,141.33487,4148.0425};
 					};
 					side="East";
 					flags=7;
@@ -140,7 +165,7 @@ class Intro
 						name="gromov";
 						isPlayer=1;
 					};
-					id=16;
+					id=50;
 					type="rhs_vmf_recon_officer";
 					class CustomAttributes
 					{
@@ -177,24 +202,7 @@ class Intro
 			class Attributes
 			{
 			};
-			id=15;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="groupID";
-					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Дельфин";
-						};
-					};
-				};
-				nAttributes=1;
-			};
+			id=49;
 		};
 		class Item1
 		{
@@ -208,7 +216,7 @@ class Intro
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4106.7173,142.33725,4147.0903};
+						position[]={4104.5781,140.85022,4149.3359};
 						angles[]={0,3.134959,0};
 					};
 					side="East";
@@ -218,8 +226,9 @@ class Intro
 						rank="COLONEL";
 						name="griev";
 					};
-					id=18;
+					id=52;
 					type="rhs_vmf_recon_officer";
+					atlOffset=0.00059509277;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -268,17 +277,18 @@ class Intro
 			class Attributes
 			{
 			};
-			id=17;
+			id=51;
+			atlOffset=0.00059509277;
 		};
 		class Item2
 		{
 			dataType="Marker";
-			position[]={4277.668,2.358,2676.2849};
+			position[]={4275.5288,2.7439427,2678.5303};
 			name="marker_1";
 			type="hd_start";
 			colorName="ColorEAST";
-			id=19;
-			atlOffset=0.00035858154;
+			id=53;
+			atlOffset=0.00073599815;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -326,12 +336,12 @@ class Intro
 		class Item3
 		{
 			dataType="Marker";
-			position[]={5381.0249,1.921,3757.6741};
+			position[]={5378.8857,2.4255762,3759.9194};
 			name="marker_2";
 			type="hd_start";
 			colorName="ColorEAST";
-			id=24;
-			atlOffset=-0.00038170815;
+			id=54;
+			atlOffset=2.3841858e-07;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -379,7 +389,7 @@ class Intro
 		class Item4
 		{
 			dataType="Marker";
-			position[]={6433.5488,7.8800001,5400.0259};
+			position[]={6431.4097,7.8691521,5402.271};
 			name="marker_3";
 			text="Анна";
 			markerType="ELLIPSE";
@@ -388,8 +398,8 @@ class Intro
 			fillName="FDiagonal";
 			a=500;
 			b=500;
-			id=25;
-			atlOffset=0.00012922287;
+			id=55;
+			atlOffset=0.0005068779;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -437,7 +447,7 @@ class Intro
 		class Item5
 		{
 			dataType="Marker";
-			position[]={4359.1079,226.995,3830.7339};
+			position[]={4356.9688,227.11227,3832.9792};
 			name="marker_4";
 			text="Борис";
 			markerType="ELLIPSE";
@@ -446,8 +456,8 @@ class Intro
 			fillName="FDiagonal";
 			a=300;
 			b=300;
-			id=30;
-			atlOffset=0.00045776367;
+			id=56;
+			atlOffset=0.0008392334;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -495,13 +505,13 @@ class Intro
 		class Item6
 		{
 			dataType="Marker";
-			position[]={6441.103,7.8740001,5403.584};
+			position[]={6438.9639,7.8614311,5405.8296};
 			name="marker_3.1";
 			text="Анна";
 			type="hd_objective";
 			colorName="ColorWEST";
-			id=33;
-			atlOffset=0.00020265579;
+			id=57;
+			atlOffset=0.00057935715;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -549,13 +559,12 @@ class Intro
 		class Item7
 		{
 			dataType="Marker";
-			position[]={4359.1079,226.97,3830.7339};
+			position[]={4356.9688,227.11143,3832.9792};
 			name="marker_4.1";
 			text="Борис";
 			type="hd_objective";
 			colorName="ColorWEST";
-			id=34;
-			atlOffset=-0.024536133;
+			id=58;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -603,7 +612,7 @@ class Intro
 		class Item8
 		{
 			dataType="Marker";
-			position[]={1865.709,5.5,5534.3979};
+			position[]={1863.5698,8.9692783,5536.6431};
 			name="marker_5";
 			text="Владимир";
 			markerType="RECTANGLE";
@@ -613,8 +622,7 @@ class Intro
 			a=316.638;
 			b=774.98999;
 			angle=14.755995;
-			id=35;
-			atlOffset=-2.7657156;
+			id=59;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -662,13 +670,13 @@ class Intro
 		class Item9
 		{
 			dataType="Marker";
-			position[]={1870.208,8.5360003,5535.7368};
+			position[]={1868.0688,8.8228979,5537.9819};
 			name="marker_5.1";
 			text="Владимир";
 			type="hd_flag";
 			colorName="ColorWEST";
-			id=36;
-			atlOffset=0.00030612946;
+			id=60;
+			atlOffset=0.00068378448;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -716,7 +724,7 @@ class Intro
 		class Item10
 		{
 			dataType="Marker";
-			position[]={3078.635,1.7359999,5955.0249};
+			position[]={3076.4958,1.8011794,5957.27};
 			name="marker_6";
 			text="Галина";
 			markerType="ELLIPSE";
@@ -725,8 +733,8 @@ class Intro
 			fillName="FDiagonal";
 			a=300;
 			b=300;
-			id=37;
-			atlOffset=0.024517417;
+			id=61;
+			atlOffset=0.024898291;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -774,13 +782,12 @@ class Intro
 		class Item11
 		{
 			dataType="Marker";
-			position[]={3078.635,1.711,5955.0249};
+			position[]={3076.4958,1.7762811,5957.27};
 			name="marker_6.1";
 			text="Галина";
 			type="hd_flag";
 			colorName="ColorWEST";
-			id=38;
-			atlOffset=-0.0004825592;
+			id=62;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -828,13 +835,13 @@ class Intro
 		class Item12
 		{
 			dataType="Marker";
-			position[]={2984.324,3.21,6039.7358};
+			position[]={2982.1848,3.136693,6041.981};
 			name="marker_6.2";
 			text="Касатка";
 			type="hd_unknown";
 			colorName="ColorEAST";
-			id=40;
-			atlOffset=0.00028085709;
+			id=63;
+			atlOffset=0.00065970421;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -882,7 +889,7 @@ class Intro
 		class Item13
 		{
 			dataType="Marker";
-			position[]={5011.3418,208.48599,5908.5278};
+			position[]={5009.2026,208.49864,5910.7729};
 			name="marker_7";
 			text="Дарья";
 			markerType="ELLIPSE";
@@ -891,8 +898,8 @@ class Intro
 			fillName="FDiagonal";
 			a=100;
 			b=100;
-			id=42;
-			atlOffset=0.024642944;
+			id=64;
+			atlOffset=0.025024414;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -940,13 +947,13 @@ class Intro
 		class Item14
 		{
 			dataType="Marker";
-			position[]={5011.3418,208.461,5908.5278};
+			position[]={5009.2026,208.47365,5910.7729};
 			name="marker_7.1";
 			text="Дарья";
 			type="hd_flag";
 			colorName="ColorWEST";
-			id=43;
-			atlOffset=-0.00035095215;
+			id=65;
+			atlOffset=3.0517578e-05;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -994,7 +1001,7 @@ class Intro
 		class Item15
 		{
 			dataType="Marker";
-			position[]={2982.572,171.425,1872.304};
+			position[]={2980.4329,171.42538,1874.5493};
 			name="marker_8";
 			text="Игорь";
 			markerType="ELLIPSE";
@@ -1003,8 +1010,8 @@ class Intro
 			fillName="FDiagonal";
 			a=100;
 			b=100;
-			id=44;
-			atlOffset=0.025009155;
+			id=66;
+			atlOffset=0.025390625;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1052,12 +1059,13 @@ class Intro
 		class Item16
 		{
 			dataType="Marker";
-			position[]={2982.572,171.39999,1872.304};
+			position[]={2980.4329,171.40038,1874.5493};
 			name="marker_8.1";
 			text="Игорь";
 			type="hd_flag";
 			colorName="ColorWEST";
-			id=45;
+			id=67;
+			atlOffset=0.00038146973;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1102,29 +1110,5 @@ class Intro
 				nAttributes=3;
 			};
 		};
-	};
-};
-class Mission
-{
-	class Intel
-	{
-		briefingName="@STR_VMF_C1_Intro_Mission_Name";
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		wavesForced=1;
-		windForced=1;
-		year=2035;
-		month=7;
-		day=6;
-		hour=12;
-		minute=0;
-		startFogDecay=0.014;
-		forecastFogDecay=0.014;
 	};
 };

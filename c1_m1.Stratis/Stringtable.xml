@@ -1,15 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Project name="PC">
 	<Package name="VMF_STR">
-		<Container name="Identities">
-			<Key ID="STR_VMF_Identities_Gromov">
-				<Russian>Громов</Russian>
-				<Original>Gromov</Original>
-			</Key>	
-			<Key ID="STR_VMF_Identities_Griev_Colonel">
-				<Russian>Полковник Гриев</Russian>
-				<Original>Colonel Griev</Original>
-			</Key>	
+		<Container name="C1_M1">
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence1_Gromov">
+				<Russian>Внимание всем, готовность две минуты. Ближе не пойдём, чтобы не спалить звук мотора.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence2_Gromov">
+				<Russian>Тарас, Пашка, до рассвета у нас не так много времени, действуем в темпе вальса. Наша задача минимум на сегодня - высадиться и скрыться в лесу на северо-востоке от точки.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence3_Gromov">
+				<Russian>Скидываем акваланги на берегу, быстро маскируем и выдвигаемся. Займёмся ими плотнее следующей ночью.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence4_Morozov">
+				<Russian>А че бы сразу не выдвинуться в тот лес за "Борисом", Лёх? Уверен, что выйдем с "Касаткой" на связь?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence5_Gromov">
+				<Russian>Если бы мы не задержались в Босфоре на лишних три часа, так бы и поступил. Нам пару-тройку километров плыть под водой, потом скакать с тяжёлыми рюкзака по горам.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence6_Shevchenko">
+				<Russian>Как будто что-то, чем мы никогда не занимались, Лёх.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence7_Gromov">
+				<Russian>Да, но это спешка. А спешка ведёт к ошибкам. Ошибки сейчас недопустимы. Даже если не убьют, ты представляешь головняки для наших дипломатов?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence8_Shevchenko">
+				<Russian>Сколько уже НАТОвцы насчитали запущенных нами ракет, м? Они до сих пор требуют выдать Горбачёва? Помяни моё слова, дипломатия тут бесполезна.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence9_Karpov">
+				<Russian>Даже если так, выковыривать пули из ваших тушек мне не очень хочется. Не будем проверять наших дипломатов, Тарасик?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part1_Sentence10_Gromov">
+				<Russian>Разговорчики, офицеры. </Russian>
+				<Original>Sentence</Original>
+			</Key>
+
+			<Key ID="STR_VMF_C1_M1_Part2_Sentence1_Gromov">
+				<Russian>Лодки. Сбрасываем акваланги там.</Russian>
+				<Original>Sentence</Original>
+			</Key>
 		</Container>
 	</Package>
 </Project>

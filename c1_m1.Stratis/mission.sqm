@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=63;
+		nextID=186;
 	};
 	class MarkerIDProvider
 	{
-		nextID=10;
+		nextID=11;
 	};
 	class Camera
 	{
-		pos[]={4370.0737,231.47751,3823.7527};
-		dir[]={-0.92958909,-0.34936419,-0.11751106};
-		up[]={-0.34660584,0.93698704,-0.043815076};
-		aside[]={-0.12541375,0,0.99210459};
+		pos[]={6010.3696,42.230259,4535.9307};
+		dir[]={-0.23006071,-0.66036278,0.71483779};
+		up[]={-0.20230934,0.7509467,0.62860954};
+		aside[]={0.95191544,0,0.3063609};
 	};
 };
 binarizationWanted=0;
@@ -31,13 +31,28 @@ sourceName="c1_m1";
 addons[]=
 {
 	"A3_Ui_F",
-	"MySuperCampaign_Campaign"
+	"MySuperCampaign_Campaign",
+	"rhs_c_weapons",
+	"A3_Weapons_F",
+	"rhs_c_troops",
+	"A3_Weapons_F_Explosives",
+	"A3_Characters_F",
+	"A3_Weapons_F_Items",
+	"rhsusf_c_weapons",
+	"A3_Weapons_F_Orange",
+	"A3_Boat_F_Boat_Transport_01",
+	"A3_Modules_F",
+	"A3_Structures_F_Naval_RowBoats",
+	"A3_Modules_F_Intel",
+	"A3_Structures_F_Civ_Camping",
+	"A3_Structures_F_EPA_Items_Tools",
+	"A3_Supplies_F_Exp"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=2;
+		items=13;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -50,870 +65,167 @@ class AddonsMetaData
 			className="MySuperCampaign_Campaign";
 			name="MySuperCampaign_Campaign";
 		};
+		class Item2
+		{
+			className="rhs_c_weapons";
+			name="AFRF Weapons Pack";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item3
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="rhs_c_troops";
+			name="AFRF Infantry & Equipment";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item5
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item6
+		{
+			className="rhsusf_c_weapons";
+			name="RHSUSF Weapons & Accessories";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item7
+		{
+			className="A3_Weapons_F_Orange";
+			name="Arma 3 Orange - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item8
+		{
+			className="A3_Boat_F";
+			name="Arma 3 Alpha - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item9
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item10
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item11
+		{
+			className="A3_Structures_F_EPA";
+			name="Arma 3 Survive Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item12
+		{
+			className="A3_Supplies_F_Exp";
+			name="Arma 3 Apex - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
 {
-	"RHS_AFRF"
+	"RHS_AFRF",
+	"RHS_USAF",
+	"Expansion"
 };
 randomSeed=4683237;
 class ScenarioData
 {
 	author="Acolyte";
+	overviewText="Группа спецназа ВМФ осуществляет проникновение на остров";
+	onLoadMission="@STR_VMF_C1_M1_Mission_Description";
 };
-class Intro
+class CustomAttributes
 {
-	class Intel
+	class Category0
 	{
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=7;
-		day=6;
-		hour=12;
-		minute=0;
-		startFogDecay=0.014;
-		forecastFogDecay=0.014;
-	};
-	class Entities
-	{
-		items=15;
-		class Item0
+		name="Scenario";
+		class Attribute0
 		{
-			dataType="Marker";
-			position[]={6427.3999,8,5387.7002};
-			name="marker_3";
-			text="Анна";
-			markerType="ELLIPSE";
-			type="";
-			colorName="ColorWEST";
-			fillName="FDiagonal";
-			a=500;
-			b=500;
-			id=39;
-			class CustomAttributes
+			property="ENH_introText";
+			expression="                if (!is3DEN && (_value # 0) > 0 && hasInterface) then                {                    _value spawn                    {                        scriptName 'ENH_Attribute_IntroText';                        params ['_delay', '_l1', '_l2', '_l3', '_type'];                        _l1 = _l1 call BIS_fnc_localize;                        _l2 = _l2 call BIS_fnc_localize;                        _l3 = _l3 call BIS_fnc_localize;                        uiSleep _delay;                        switch _type do                        {                            case 0:                            {                                private _text = parseText format                                [                                    ""<t align='right' size='1.6'><t font='PuristaBold' size='1.8'>%1<br/></t>%2<br/>%3</t>"",                                    _l1,                                    _l2,                                    _l3                                ];                                [_text, true] spawn BIS_fnc_textTiles;                            };                            case 1:                            {                                [_l1, _l2, _l3] spawn BIS_fnc_infoText;                            };                            case 2:                            {                                [_l1, _l2, _l3] spawn BIS_fnc_EXP_camp_SITREP;                            };                        };                    };                }";
+			class Value
 			{
-				class Attribute0
+				class data
 				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
+					singleType="ARRAY";
+					class value
 					{
-						class data
+						items=5;
+						class Item0
 						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_3_show"", false]";
+							class data
+							{
+								singleType="SCALAR";
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="STRING";
+								value="c1_m1";
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="STRING";
+								value="by Alexander";
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								singleType="STRING";
+								value="04:30";
+							};
+						};
+						class Item4
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0;
+							};
 						};
 					};
 				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="DECAGON";
-						};
-					};
-				};
-				nAttributes=3;
 			};
 		};
-		class Item1
-		{
-			dataType="Marker";
-			position[]={6427.3999,8,5387.7002};
-			name="marker_3.1";
-			text="Анна";
-			type="mil_objective";
-			colorName="ColorWEST";
-			id=40;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_3_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item2
-		{
-			dataType="Marker";
-			position[]={4353,226.60001,3818.5};
-			name="marker_4";
-			text="Борис";
-			markerType="ELLIPSE";
-			type="";
-			colorName="ColorWEST";
-			fillName="FDiagonal";
-			a=300;
-			b=300;
-			id=41;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_4_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="DECAGON";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item3
-		{
-			dataType="Marker";
-			position[]={4353,226.60001,3818.5};
-			name="marker_4.1";
-			text="Борис";
-			type="mil_objective";
-			colorName="ColorWEST";
-			id=42;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_4_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item4
-		{
-			dataType="Marker";
-			position[]={1859.5,5.5999999,5522.1001};
-			name="marker_5";
-			text="Владимир";
-			markerType="RECTANGLE";
-			type="";
-			colorName="ColorWEST";
-			fillName="FDiagonal";
-			a=316.638;
-			b=774.98999;
-			angle=14.755995;
-			id=43;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_5_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item5
-		{
-			dataType="Marker";
-			position[]={1859.5,5.5999999,5522.1001};
-			name="marker_5.1";
-			text="Владимир";
-			type="mil_flag";
-			colorName="ColorWEST";
-			id=44;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_5_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item6
-		{
-			dataType="Marker";
-			position[]={3072.5,2,5942.7002};
-			name="marker_6";
-			text="Галина";
-			markerType="ELLIPSE";
-			type="";
-			colorName="ColorWEST";
-			fillName="FDiagonal";
-			a=300;
-			b=300;
-			id=45;
-			atlOffset=0.023981094;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_6_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="DECAGON";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item7
-		{
-			dataType="Marker";
-			position[]={3072.5,2,5942.7002};
-			name="marker_6.1";
-			text="Галина";
-			type="mil_flag";
-			colorName="ColorWEST";
-			id=46;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_6_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item8
-		{
-			dataType="Marker";
-			position[]={5017,208.8,5924.7998};
-			name="marker_7";
-			text="Дарья";
-			markerType="ELLIPSE";
-			type="";
-			colorName="ColorWEST";
-			fillName="FDiagonal";
-			a=100;
-			b=100;
-			id=47;
-			atlOffset=0.024124146;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_7_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="DECAGON";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item9
-		{
-			dataType="Marker";
-			position[]={5017,208.8,5924.7998};
-			name="marker_7.1";
-			text="Дарья";
-			type="mil_flag";
-			colorName="ColorWEST";
-			id=48;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_7_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item10
-		{
-			dataType="Marker";
-			position[]={2976.3999,179,1860};
-			name="marker_8";
-			text="Игорь";
-			markerType="ELLIPSE";
-			type="";
-			colorName="ColorWEST";
-			fillName="FDiagonal";
-			a=100;
-			b=100;
-			id=49;
-			atlOffset=7.554184;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_8_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="DECAGON";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item11
-		{
-			dataType="Marker";
-			position[]={2976.3999,179,1860};
-			name="marker_8.1";
-			text="Игорь";
-			type="mil_flag";
-			colorName="ColorWEST";
-			id=50;
-			atlOffset=7.5293732;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_8_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item12
-		{
-			dataType="Marker";
-			position[]={2989.8999,5.0999999,6055.8999};
-			name="marker_6.2";
-			text="Касатка";
-			type="mil_unknown";
-			colorName="ColorEAST";
-			id=51;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_6_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item13
-		{
-			dataType="Marker";
-			position[]={4271.5,2,2664};
-			name="marker_1";
-			type="mil_start";
-			colorName="ColorEAST";
-			id=52;
-			atlOffset=0.0001604557;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_1_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item14
-		{
-			dataType="Marker";
-			position[]={5386.5,3.2,3773.8999};
-			name="marker_2";
-			type="mil_start";
-			colorName="ColorEAST";
-			id=53;
-			atlOffset=4.1529727;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_2_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
+		nAttributes=1;
 	};
 };
 class Mission
 {
 	class Intel
 	{
+		briefingName="@STR_VMF_C1_M1_Mission_Name";
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
 		startWind=0.1;
@@ -922,17 +234,15 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		year=2035;
-		month=7;
-		day=6;
-		hour=11;
-		minute=28;
+		year=1992;
+		month=10;
+		hour=4;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=16;
+		items=47;
 		class Item0
 		{
 			dataType="Marker";
@@ -957,7 +267,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_3_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -970,7 +280,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1010,7 +320,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_3_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1023,7 +333,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1068,7 +378,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_4_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1081,7 +391,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1122,7 +432,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_4_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1135,7 +445,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1181,7 +491,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_5_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1194,7 +504,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1235,7 +545,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_5_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1248,7 +558,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1293,7 +603,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_6_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1306,7 +616,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1347,7 +657,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_6_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1360,7 +670,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1405,7 +715,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_7_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1418,7 +728,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1459,7 +769,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_7_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1472,7 +782,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1517,7 +827,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_8_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1530,7 +840,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1571,7 +881,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_8_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1584,7 +894,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1625,7 +935,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_6_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1638,7 +948,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1661,12 +971,12 @@ class Mission
 		class Item13
 		{
 			dataType="Marker";
-			position[]={4271.5,2,2664};
-			name="marker_1";
+			position[]={5386.5,3.2,3773.8999};
+			name="marker_2";
 			type="mil_start";
 			colorName="ColorEAST";
-			id=18;
-			atlOffset=-0.073750019;
+			id=19;
+			atlOffset=0.016267061;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1678,7 +988,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="missionNamespace getVariable [""marker_1_show"", false]";
+							value="";
 						};
 					};
 				};
@@ -1691,7 +1001,7 @@ class Mission
 						class data
 						{
 							singleType="BOOL";
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -1713,42 +1023,54 @@ class Mission
 		};
 		class Item14
 		{
+			dataType="Trigger";
+			position[]={7668.4648,13.897919,2520.043};
+			class Attributes
+			{
+				name="trigger1";
+				text="1. Проверка наличия экипажа и уничтожение лодки";
+				condition="count(crew spn_boat1)==0;" \n "";
+				onActivation="spn_boat1 setDamage 1;" \n "spn_boat1_damaged=true;" \n " " \n "shevchenko enableAI ""MOVE"";" \n "detach shevchenko;" \n "_pos = position spn_boat1;" \n "_pos set[1,_pos#1+3];" \n "shevchenko setPos _pos;";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={3,3,3};
+				activationBy="ANY";
+				triggerInterval=1;
+			};
+			id=83;
+			type="EmptyDetector";
+			atlOffset=125.739;
+		};
+		class Item15
+		{
+			dataType="Trigger";
+			position[]={7670.8042,13.202026,2519.897};
+			class Attributes
+			{
+				text="2. Проверка уничтожения лодки и удаление через 20 секунд";
+				condition="spn_boat1_damaged";
+				onActivation="deleteVehicle spn_boat1;" \n "spn_boat1_destroyed = true;" \n "" \n "[] spawn fnc_skipDiving;";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={20,20,20};
+				activationBy="ANY";
+				triggerInterval=1;
+			};
+			id=84;
+			type="EmptyDetector";
+			atlOffset=125.409;
+		};
+		class Item16
+		{
 			dataType="Marker";
-			position[]={5386.5,3.2,3773.8999};
-			name="marker_2";
-			type="mil_start";
-			colorName="ColorEAST";
-			id=19;
-			atlOffset=0.016267061;
+			position[]={5516.0054,-11.988218,3662.8018};
+			name="marker_travel";
+			type="Empty";
+			id=88;
+			atlOffset=5.9385071;
 			class CustomAttributes
 			{
 				class Attribute0
-				{
-					property="ENH_markerShowOnCondition";
-					expression="                if (!isServer || is3DEN || _value == 'false' || _value == '') exitWith {};                [_this, compile _value] spawn                {                    params ['_marker', '_compiledValue'];                    scriptName 'ENH_MarkerShowOnCondition';                    waitUntil {sleep 0.5; call _compiledValue};                    private _newAlpha = missionNamespace getVariable [format ['ENH_attributesMarker_%1_initAlpha', _marker], 1];                    _marker setMarkerAlpha _newAlpha;                }";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="missionNamespace getVariable [""marker_2_show"", false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ENH_markerHideOnStart";
-					expression="                if (!isServer || is3DEN || !_value) exitWith {};                missionNamespace setVariable [format ['ENH_attributesMarker_%1_initAlpha', _this], markerAlpha _this];                _this setMarkerAlpha 0";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
 				{
 					property="ENH_markerShape";
 					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
@@ -1761,53 +1083,2231 @@ class Mission
 						};
 					};
 				};
-				nAttributes=3;
+				nAttributes=1;
 			};
 		};
-		class Item15
+		class Item17
 		{
 			dataType="Group";
 			side="East";
 			class Entities
 			{
-				items=2;
+				items=7;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4360.8325,226.729,3819.6501};
+						position[]={8642.9951,0.65496653,2387.6641};
+						angles[]={0,4.9431739,0};
 					};
 					side="East";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
+						skill=1;
+						rank="MAJOR";
+						name="gromov";
 						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="rhs_weap_asval_grip";
+								optics="rhs_acc_ekp1";
+								flashlight="rhs_acc_perst1ik_ris";
+								underBarrel="rhs_acc_grip_rk6";
+								class primaryMuzzleMag
+								{
+									name="rhs_20rnd_9x39mm_SP6";
+									ammoLeft=20;
+								};
+							};
+							class handgun
+							{
+								name="rhs_weap_pb_6p9";
+								muzzle="rhs_acc_6p9_suppressor";
+								class primaryMuzzleMag
+								{
+									name="rhs_mag_9x18_8_57N181S";
+									ammoLeft=8;
+								};
+							};
+							class uniform
+							{
+								typeName="rhs_uniform_6sh122_gloves_v2";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="rhs_mag_9x18_8_57N181S";
+										count=2;
+										ammoLeft=8;
+									};
+								};
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="rhs_1PN138";
+										count=1;
+									};
+									class Item1
+									{
+										name="rhs_beret_mp1";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="rhs_6sh117_val";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="rhs_20rnd_9x39mm_SP6";
+										count=11;
+										ammoLeft=20;
+									};
+									class Item1
+									{
+										name="SmokeShellRed";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="DemoCharge_Remote_Mag";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="rhs_Booniehat_digi";
+						};
 					};
-					id=61;
+					id=67;
 					type="vmf_recon_group_commander";
+					atlOffset=130.96056;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male01RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4360.1978,226.87593,3827.6221};
-						angles[]={0,2.9354155,-0};
+						position[]={8176.5981,0.37464732,2420.7178};
+						angles[]={0,4.9431739,0};
 					};
 					side="East";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
+						skill=1;
+						rank="LIEUTENANT";
+						init="this setIdentity ""Karpov"";";
+						name="karpov";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="rhs_weap_asval_grip";
+								optics="rhs_acc_ekp1";
+								flashlight="rhs_acc_perst1ik_ris";
+								underBarrel="rhs_acc_grip_rk6";
+								class primaryMuzzleMag
+								{
+									name="rhs_20rnd_9x39mm_SP5";
+									ammoLeft=20;
+								};
+							};
+							class handgun
+							{
+								name="rhs_weap_pb_6p9";
+								muzzle="rhs_acc_6p9_suppressor";
+								class primaryMuzzleMag
+								{
+									name="rhs_mag_9x18_8_57N181S";
+									ammoLeft=8;
+								};
+							};
+							class uniform
+							{
+								typeName="rhs_uniform_6sh122_gloves_v2";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="SmokeShellOrange";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=2;
+									};
+									class Item1
+									{
+										name="rhs_beret_mp1";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="rhs_6sh117_val";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="rhs_mag_rgn";
+										count=3;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="rhs_mag_9x18_8_57N181S";
+										count=3;
+										ammoLeft=8;
+									};
+									class Item2
+									{
+										name="rhs_20rnd_9x39mm_SP6";
+										count=10;
+										ammoLeft=20;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="rhs_medic_bag";
+								isBackpack=1;
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="Medikit";
+										count=1;
+									};
+									class Item1
+									{
+										name="FirstAidKit";
+										count=2;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_Bandanna_khk";
+						};
 					};
-					id=62;
+					id=131;
+					type="vmf_recon_medic";
+					atlOffset=129.3156;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.94999999;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8175.0244,-0.004847765,2419.1423};
+						angles[]={0,4.9431739,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+						skill=1;
+						rank="CAPTAIN";
+						init="this setIdentity ""Morozov"";" \n "this commandMove getWPPos [this,1];";
+						name="morozov";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="rhs_weap_asval_grip";
+								optics="rhs_acc_ekp1";
+								flashlight="rhs_acc_perst1ik_ris";
+								underBarrel="rhs_acc_grip_rk6";
+								class primaryMuzzleMag
+								{
+									name="rhs_20rnd_9x39mm_SP6";
+									ammoLeft=20;
+								};
+							};
+							class handgun
+							{
+								name="rhs_weap_pb_6p9";
+								muzzle="rhs_acc_6p9_suppressor";
+								class primaryMuzzleMag
+								{
+									name="rhs_mag_9x18_8_57N181S";
+									ammoLeft=8;
+								};
+							};
+							class uniform
+							{
+								typeName="rhs_uniform_6sh122_gloves_v2";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="rhs_mag_9x18_8_57N181S";
+										count=2;
+										ammoLeft=8;
+									};
+								};
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="rhs_1PN138";
+										count=1;
+									};
+									class Item1
+									{
+										name="rhs_beret_mp1";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="rhs_6sh117_val";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="rhs_20rnd_9x39mm_SP6";
+										count=11;
+										ammoLeft=20;
+									};
+									class Item1
+									{
+										name="SmokeShellRed";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="DemoCharge_Remote_Mag";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="rhs_beanie_green";
+						};
+					};
+					id=110;
 					type="vmf_recon_squad_commander";
+					atlOffset=129.12151;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8175.0244,-0.004847765,2419.1423};
+						angles[]={0,4.9431739,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+						skill=1;
+						rank="LIEUTENANT";
+						init="this setIdentity ""Ustinov"";" \n "";
+						name="ustinov";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="rhs_weap_vss_grip";
+								optics="rhs_acc_pso1m2";
+								flashlight="rhs_acc_perst1ik_ris";
+								underBarrel="rhsusf_acc_grip1";
+								class primaryMuzzleMag
+								{
+									name="rhs_20rnd_9x39mm_SP6";
+									ammoLeft=20;
+								};
+							};
+							class handgun
+							{
+								name="rhs_weap_pb_6p9";
+								muzzle="rhs_acc_6p9_suppressor";
+								class primaryMuzzleMag
+								{
+									name="rhs_mag_9x18_8_57N181S";
+									ammoLeft=8;
+								};
+							};
+							class binocular
+							{
+								name="rhs_pdu4";
+							};
+							class uniform
+							{
+								typeName="rhs_uniform_6sh122_gloves_v2";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="rhs_mag_9x18_8_57N181S";
+										count=2;
+										ammoLeft=8;
+									};
+								};
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="rhs_1PN138";
+										count=1;
+									};
+									class Item1
+									{
+										name="rhs_beret_mp1";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="rhs_6sh117_val";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="rhs_20rnd_9x39mm_SP6";
+										count=10;
+										ammoLeft=20;
+									};
+									class Item1
+									{
+										name="rhs_mag_rgn";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="rhs_acc_1pn93_1";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="rhs_vkpo_cap";
+						};
+					};
+					id=136;
+					type="vmf_recon_marksman";
+					atlOffset=129.12151;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male01RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8175.0244,-0.0048475266,2419.1423};
+						angles[]={0,4.9431739,0};
+					};
+					side="East";
+					flags=1;
+					class Attributes
+					{
+						skill=1;
+						rank="LIEUTENANT";
+						init="this setIdentity ""Mironov"";";
+						name="mironov";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="rhs_weap_asval_grip";
+								optics="rhs_acc_ekp1";
+								flashlight="rhs_acc_perst1ik_ris";
+								underBarrel="rhs_acc_grip_rk6";
+								class primaryMuzzleMag
+								{
+									name="rhs_20rnd_9x39mm_SP5";
+									ammoLeft=20;
+								};
+							};
+							class handgun
+							{
+								name="rhs_weap_pb_6p9";
+								muzzle="rhs_acc_6p9_suppressor";
+								class primaryMuzzleMag
+								{
+									name="rhs_mag_9x18_8_57N181S";
+									ammoLeft=8;
+								};
+							};
+							class uniform
+							{
+								typeName="rhs_uniform_6sh122_gloves_v2";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="rhs_mag_9x18_8_57N181S";
+										count=3;
+										ammoLeft=8;
+									};
+									class Item1
+									{
+										name="SmokeShell";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=2;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="rhs_6sh117_val";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="rhs_20rnd_9x39mm_SP6";
+										count=10;
+										ammoLeft=20;
+									};
+									class Item1
+									{
+										name="rhs_mag_rgn";
+										count=5;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="rhs_rk_sht_30_emr_engineer_empty";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="ATMine_Range_Mag";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="rhs_ec400_mag";
+										count=3;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="MineDetector";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_Watchcap_khk";
+						};
+					};
+					id=138;
+					type="vmf_recon_demolitioner";
+					atlOffset=129.12151;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.95999998;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8175.4912,0.16397548,2418.8191};
+						angles[]={0,4.8986158,0};
+					};
+					side="East";
+					class Attributes
+					{
+						rank="CAPTAIN";
+						init="this setIdentity ""Shevchenko"";" \n "this attachTo [spn_boat1];" \n "this disableAI ""Move"";";
+						name="shevchenko";
+						stance="Middle";
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="rhs_weap_asval_grip";
+								optics="rhs_acc_ekp1";
+								flashlight="rhs_acc_perst1ik_ris";
+								underBarrel="rhs_acc_grip_rk6";
+								class primaryMuzzleMag
+								{
+									name="rhs_20rnd_9x39mm_SP6";
+									ammoLeft=20;
+								};
+							};
+							class handgun
+							{
+								name="rhs_weap_pb_6p9";
+								muzzle="rhs_acc_6p9_suppressor";
+								class primaryMuzzleMag
+								{
+									name="rhs_mag_9x18_8_57N181S";
+									ammoLeft=8;
+								};
+							};
+							class uniform
+							{
+								typeName="rhs_uniform_6sh122_gloves_v2";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="rhs_mag_9x18_8_57N181S";
+										count=2;
+										ammoLeft=8;
+									};
+								};
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="rhs_1PN138";
+										count=1;
+									};
+									class Item1
+									{
+										name="rhs_beret_mp1";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="rhs_6sh117_val";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="rhs_20rnd_9x39mm_SP6";
+										count=11;
+										ammoLeft=20;
+									};
+									class Item1
+									{
+										name="SmokeShellRed";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="DemoCharge_Remote_Mag";
+										count=1;
+										ammoLeft=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							headgear="H_Bandanna_khk_hs";
+						};
+					};
+					id=153;
+					type="vmf_recon_squad_commander";
+					atlOffset=129.28799;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male02RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.95999998;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={7719.9512,-0.4180069,2643.1704};
+					completitionRadius=10;
+					expCond="speed spn_boat1 < 1;";
+					class Effects
+					{
+					};
+					timeoutMin=1;
+					timeoutMid=1;
+					timeoutMax=1;
+					showWP="NEVER";
+					id=134;
+					type="Move";
+					atlOffset=113.78385;
 				};
 			};
 			class Attributes
 			{
+				behaviour="STEALTH";
+				speedMode="LIMITED";
+				formation="FILE";
 			};
-			id=60;
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=5;
+				};
+				class Links
+				{
+					items=5;
+					class Item0
+					{
+						linkID=0;
+						item0=67;
+						item1=65;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={3};
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=131;
+						item1=65;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={2};
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=110;
+						item1=65;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item3
+					{
+						linkID=3;
+						item0=136;
+						item1=65;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+					class Item4
+					{
+						linkID=4;
+						item0=138;
+						item1=65;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={1};
+						};
+					};
+				};
+			};
+			id=66;
+			atlOffset=129.12199;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Дельфин";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8175.0239,1.2377038,2419.092};
+				angles[]={0,4.9431739,0};
+			};
+			side="East";
+			class Attributes
+			{
+				name="spn_boat1";
+			};
+			id=65;
+			type="B_Boat_Transport_01_F";
+			atlOffset=129.12199;
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8184.5928,1.5740991,2416.3276};
+				angles[]={0,4.9787264,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="spn_boat2";
+			};
+			id=129;
+			type="B_Boat_Transport_01_F";
+			atlOffset=129.0463;
+		};
+		class Item20
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5383.0552,4.7022285,3784.6497};
+				angles[]={5.9442854,0,6.2058401};
+			};
+			areaSize[]={1,0,1};
+			flags=1;
+			id=142;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=8;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item21
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5393.7632,4.1899538,3783.7117};
+				angles[]={6.0954237,0,6.2631865};
+			};
+			areaSize[]={2,0,2};
+			flags=1;
+			id=145;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5394.4009,4.5310898,3785.6792};
+				angles[]={6.1050916,0.41243875,6.2606878};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="boat_storage";
+				disableSimulation=1;
+			};
+			id=147;
+			type="Land_RowBoat_V3_F";
+			atlOffset=-0.50041866;
+		};
+		class Item23
+		{
+			dataType="Trigger";
+			position[]={5393.6929,4.4686089,3785.219};
+			class Attributes
+			{
+				text="Увидели лодку и предложили спрятать акваланги там";
+				onActivation="[] spawn fnc_addSwapLoadoutAction;" \n "[] spawn fnc_kbStartPart2;" \n "msn_rearmed = true;";
+				sizeA=25;
+				sizeB=25;
+				activationBy="EAST";
+				triggerInterval=1;
+			};
+			id=148;
+			type="EmptyDetectorAreaR50";
+		};
+		class Item24
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5386.5161,4.1751261,3773.8569};
+			};
+			id=150;
+			type="ModuleTaskCreate_F";
+			atlOffset=1.0000005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleTaskCreate_F_Destination";
+					expression="_this setVariable ['Destination',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleTaskCreate_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="move1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleTaskCreate_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleTaskCreate_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="marker_2";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleTaskCreate_F_Title";
+					expression="_this setVariable ['Title',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Добраться до берега";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleTaskCreate_F_Description";
+					expression="_this setVariable ['Description',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Уже почти утро. Нужно успеть добраться до берега до того, как наступит рассвет.";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleTaskCreate_F_ID";
+					expression="_this setVariable ['ID',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="t1";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleTaskCreate_F_AlwaysVisible";
+					expression="_this setVariable ['AlwaysVisible',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleTaskCreate_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleTaskCreate_F_State";
+					expression="_this setVariable ['State',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="ASSIGNED";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleTaskCreate_F_IDParent";
+					expression="_this setVariable ['IDParent',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				nAttributes=11;
+			};
+		};
+		class Item25
+		{
+			dataType="Trigger";
+			position[]={5387.4761,3.1583083,3774.1311};
+			class Attributes
+			{
+				text="Выдать задачу на высадку";
+				condition="true";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={3,3,3};
+				activationBy="ANY";
+			};
+			id=151;
+			type="EmptyDetector";
+		};
+		class Item26
+		{
+			dataType="Trigger";
+			position[]={5389.1919,4.3833666,3783.7151};
+			class Attributes
+			{
+				text="3. Проверить, что игроки в зоне и убрать действие на быстрое перемещение";
+				condition="this;";
+				onActivation="player removeAction msn_skip_diving;";
+				sizeA=200;
+				sizeB=200;
+				timeout[]={1,1,1};
+				interuptable=1;
+				activationBy="EAST";
+				triggerInterval=10;
+			};
+			id=152;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item27
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5387.9141,4.0276113,3779.9509};
+				angles[]={6.1391954,0,6.2282419};
+			};
+			id=154;
+			type="ModuleTaskSetState_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleTaskSetState_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleTaskSetState_F_State";
+					expression="_this setVariable ['State',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="SUCCEEDED";
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item28
+		{
+			dataType="Trigger";
+			position[]={5395.9771,3.9796581,3782.8379};
+			class Attributes
+			{
+				text="Выдать задачу на перевооружение";
+				condition="msn_rearmed";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={3,3,3};
+				activationBy="ANY";
+			};
+			id=158;
+			type="EmptyDetector";
+		};
+		class Item29
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5396.3184,4.1685114,3783.9294};
+				angles[]={6.1196589,0,6.220767};
+			};
+			id=159;
+			type="ModuleTaskCreate_F";
+			atlOffset=5.1021576e-05;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleTaskCreate_F_Destination";
+					expression="_this setVariable ['Destination',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleTaskCreate_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="rearm";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleTaskCreate_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleTaskCreate_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleTaskCreate_F_Title";
+					expression="_this setVariable ['Title',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Перевооружиться";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleTaskCreate_F_Description";
+					expression="_this setVariable ['Description',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleTaskCreate_F_ID";
+					expression="_this setVariable ['ID',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="t2";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleTaskCreate_F_AlwaysVisible";
+					expression="_this setVariable ['AlwaysVisible',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleTaskCreate_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleTaskCreate_F_State";
+					expression="_this setVariable ['State',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="ASSIGNED";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleTaskCreate_F_IDParent";
+					expression="_this setVariable ['IDParent',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				nAttributes=11;
+			};
+		};
+		class Item30
+		{
+			dataType="Trigger";
+			position[]={5396.9258,3.9956284,3783.1121};
+			class Attributes
+			{
+				text="Выполнить задание на перевооружение";
+				condition="msn_group_rearmed";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={3,3,3};
+				interuptable=1;
+				activationBy="ANY";
+			};
+			id=162;
+			type="EmptyDetector";
+		};
+		class Item31
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5397.0122,4.1386242,3784.0103};
+				angles[]={6.1050925,0,6.220767};
+			};
+			id=164;
+			type="ModuleTaskSetState_F";
+			atlOffset=4.1484833e-05;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleTaskSetState_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleTaskSetState_F_State";
+					expression="_this setVariable ['State',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="SUCCEEDED";
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item32
+		{
+			dataType="Trigger";
+			position[]={6008.6582,12.401514,4576.853};
+			class Attributes
+			{
+				name="camp_task";
+				text="Выдать задание на лагерь";
+				condition="msn_group_rearmed";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={6,6,6};
+				interuptable=1;
+			};
+			id=165;
+			type="EmptyDetector";
+		};
+		class Item33
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6008.5078,12.36918,4576.3418};
+				angles[]={0,0,0.21177825};
+			};
+			id=166;
+			type="ModuleTaskCreate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleTaskCreate_F_Destination";
+					expression="_this setVariable ['Destination',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleTaskCreate_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="backpack";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleTaskCreate_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleTaskCreate_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleTaskCreate_F_Title";
+					expression="_this setVariable ['Title',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Разбить лагерь";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleTaskCreate_F_Description";
+					expression="_this setVariable ['Description',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleTaskCreate_F_ID";
+					expression="_this setVariable ['ID',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="t3";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleTaskCreate_F_AlwaysVisible";
+					expression="_this setVariable ['AlwaysVisible',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleTaskCreate_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=5;
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleTaskCreate_F_State";
+					expression="_this setVariable ['State',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="ASSIGNED";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleTaskCreate_F_IDParent";
+					expression="_this setVariable ['IDParent',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				nAttributes=11;
+			};
+		};
+		class Item34
+		{
+			dataType="Trigger";
+			position[]={6007.2158,12.43448,4577.3979};
+			class Attributes
+			{
+				condition="msn_campCreated";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={2,2,2};
+				activationBy="ANY";
+			};
+			id=167;
+			type="EmptyDetector";
+		};
+		class Item35
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6007.0781,12.453307,4576.8589};
+			};
+			id=169;
+			type="ModuleTaskSetState_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleTaskSetState_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleTaskSetState_F_State";
+					expression="_this setVariable ['State',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="SUCCEEDED";
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item36
+		{
+			dataType="Trigger";
+			position[]={6006.2651,12.646008,4577.9551};
+			class Attributes
+			{
+				condition="msn_campCreated";
+				onActivation="[0, ""BLACK"", 5, 1,"""",""END1""] spawn BIS_fnc_fadeEffect;";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={6,6,6};
+				activationBy="ANY";
+			};
+			id=170;
+			type="EmptyDetector";
+		};
+		class Item37
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5988.0747,15.201829,4574.7173};
+				angles[]={6.1075153,4.8042645,6.2407117};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=176;
+			type="Land_TentA_F";
+		};
+		class Item38
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5998.7129,15.386971,4580.022};
+				angles[]={6.1563697,6.1526365,6.2432079};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=177;
+			type="Land_TentA_F";
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6005.6802,12.605557,4561.1606};
+				angles[]={0.097193338,2.3388932,0.1973958};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=178;
+			type="Land_TentA_F";
+		};
+		class Item40
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5999.707,14.646914,4578.856};
+				angles[]={6.1596417,0,6.244843};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=179;
+			type="Land_GasCooker_F";
+			atlOffset=0.00014781952;
+		};
+		class Item41
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6018.2651,15.62185,4578.2651};
+				angles[]={6.2631893,1.5279677,0.089757703};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=180;
+			type="Land_TentA_F";
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5998.125,14.693838,4579.291};
+				angles[]={6.1353559,1.3946576,5.6822333};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=181;
+			type="B_Bergen_dgtl_F";
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5996.8643,14.885826,4580.0815};
+				angles[]={6.1563697,1.4549328,6.2432079};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=182;
+			type="B_Bergen_dgtl_F";
+		};
+		class Item44
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5996.9468,14.851984,4579.8911};
+				angles[]={6.1002541,3.6813412,6.2432079};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=183;
+			type="B_Bergen_dgtl_F";
+		};
+		class Item45
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5997.0068,14.875765,4580.0474};
+				angles[]={6.1563697,5.5162325,6.2432079};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=184;
+			type="B_Bergen_dgtl_F";
+		};
+		class Item46
+		{
+			dataType="Trigger";
+			position[]={6003.8472,11.791242,4572.5181};
+			class Attributes
+			{
+				name="camp_trigger";
+				sizeA=25;
+				sizeB=25;
+				activationBy="ANY";
+			};
+			id=185;
+			type="EmptyDetectorAreaR50";
+			atlOffset=-9.5367432e-07;
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=10;
+		};
+		class Links
+		{
+			items=10;
+			class Item0
+			{
+				linkID=0;
+				item0=151;
+				item1=150;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
+				item0=148;
+				item1=154;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item2
+			{
+				linkID=2;
+				item0=154;
+				item1=150;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item3
+			{
+				linkID=3;
+				item0=158;
+				item1=159;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item4
+			{
+				linkID=4;
+				item0=159;
+				item1=147;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item5
+			{
+				linkID=5;
+				item0=164;
+				item1=159;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item6
+			{
+				linkID=6;
+				item0=164;
+				item1=162;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item7
+			{
+				linkID=7;
+				item0=165;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item8
+			{
+				linkID=8;
+				item0=167;
+				item1=169;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item9
+			{
+				linkID=9;
+				item0=169;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
 		};
 	};
 };

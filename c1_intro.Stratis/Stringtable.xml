@@ -1,25 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Project name="PC">
 	<Package name="VMF_STR">
-		<Container name="Identities">
-			<Key ID="STR_VMF_Identities_Gromov">
-				<Russian>Громов</Russian>
-				<Original>Gromov</Original>
-			</Key>	
-			<Key ID="STR_VMF_Identities_Griev_Colonel">
-				<Russian>Полковник Гриев</Russian>
-				<Original>Colonel Griev</Original>
-			</Key>	
-		</Container>
 		<Container name="C1_Intro">
-			<Key ID="STR_VMF_C1_Intro_Mission_Name">
-				<Russian>Брифинг</Russian>
-				<Original>Briefing</Original>
-			</Key>		
-			<Key ID="STR_VMF_C1_Intro_Mission_Description">
-				<Russian>Командира 1-й группы 137 ОМРП СпН на Черноморском флоте, майора морской пехоты Громова Алексея Витальевича срочно отозвали из отпуска и вызвали на брифинг.</Russian>
-				<Original>Briefing</Original>
-			</Key>
 			<Key ID="STR_VMF_C1_Intro_Sentence1">
 				<Russian>Товарищ полковник, майор Громов по вашему приказанию прибыл!</Russian>
 				<Original>Sentence</Original>
@@ -57,7 +39,7 @@
 				<Original>Sentence</Original>
 			</Key>
 			<Key ID="STR_VMF_C1_Intro_Sentence10">
-				<Russian>На время операции присваеваем вам позывной 'Дельфин', позывной командующего операции 'Нептун'. Проникновение на остров осуществите с использованием торгового судна. Войдёте в акваторию острова ночью на надувных лодках, дальше под водой с аквалангами.</Russian>
+				<Russian>На время операции присваиваем вам позывной 'Дельфин', позывной командующего операции 'Нептун'. Проникновение на остров осуществите с использованием торгового судна. Войдёте в акваторию острова ночью на надувных лодках, дальше под водой с аквалангами.</Russian>
 				<Original>Sentence</Original>
 			</Key>
 			<Key ID="STR_VMF_C1_Intro_Sentence11">

@@ -1,5 +1,6 @@
 class CfgIdentities
 {
+	/// Командир Развед группы, Майор Алексей Громов
 	class Gromov
 	{
 		face = "WhiteHead_07";
@@ -9,14 +10,74 @@ class CfgIdentities
 		pitch = 1.0;
 		speaker = "Male03RUS";
 	};
-	class Griev
+
+	// Разведчик санитар, Лейтенант Владимир Карпов
+	class Karpov
 	{
-		face = "WhiteHead_07";
+		face = "RussianHead_2";
 		glasses = "";
-		name = "$STR_VMF_Identities_Griev_Colonel";
-		nameSound = "Griev";
+		name = "$STR_VMF_Identities_Karpov";
+		nameSound = "Karpov";
 		pitch = 1.0;
-		speaker = "Male03RUS";
+		speaker = "Male02RUS";
 	};
-	
+
+	// Командир 1 отделения, Капитан Павел Морозов
+	class Morozov
+	{
+		face = "RussianHead_1";
+		glasses = "";
+		name = "$STR_VMF_Identities_Morozov";
+		nameSound = "Morozov";
+		pitch = 1.0;
+		speaker = "Male02RUS";
+	};
+	// Командир 1 отделения, Лейтенант Роман Устинов
+	class Ustinov
+	{
+		face = "AsianHead_A3_07";
+		glasses = "";
+		name = "$STR_VMF_Identities_Ustinov";
+		nameSound = "Ustinov";
+		pitch = 1.0;
+		speaker = "Male02RUS";
+	};
+
+	class Mironov
+	{
+		face = "RussianHead_3";
+		glasses = "";
+		name = "$STR_VMF_Identities_Mironov";
+		nameSound = "Mironov";
+		pitch = 1.0;
+		speaker = "Male02RUS";
+	};
+
+	class Shevchenko
+	{
+		face = "RussianHead_3";
+		glasses = "";
+		name = "$STR_VMF_Identities_Shevchenko";
+		nameSound = "Shevchenko";
+		pitch = 1.0;
+		speaker = "Male02RUS";
+	};
+	// STR_VMF_Identities_Mironov
+};
+
+class CfgSentences
+{
+	class VMF_C1_M1
+	{
+		class Part1
+		{
+			file = "kb\part1.bikb";
+			#include "kb\part1.bikb" // avoids a double declaration
+		};
+		class Part2
+		{
+			file = "kb\part2.bikb";
+			#include "kb\part2.bikb" // avoids a double declaration
+		};
+	};
 };

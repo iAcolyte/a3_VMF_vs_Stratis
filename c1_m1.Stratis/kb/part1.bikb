@@ -1,0 +1,71 @@
+class Sentences
+{
+	class Sentence1
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence1_Gromov";
+		speech[] = { "\Sounds\part1\part1_sentence1.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+    class Sentence2
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence2_Gromov";
+		speech[] = { "\Sounds\part1\part1_sentence2.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+    class Sentence3
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence3_Gromov";
+		speech[] = { "\Sounds\part1\part1_sentence3.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+    class Sentence4
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence4_Morozov";
+		speech[] = { "\Sounds\part1\part1_sentence4.wav" };
+		class Arguments {};
+		actor = "morozov";
+	};
+    class Sentence5
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence5_Gromov";
+		speech[] = { "\Sounds\part1\part1_sentence5.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+    class Sentence6
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence6_Shevchenko";
+		speech[] = { "\Sounds\part1\part1_sentence6.wav" };
+		class Arguments {};
+		actor = "shevchenko";
+	};
+    class Sentence7
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence7_Gromov";
+		speech[] = { "\Sounds\part1\part1_sentence7.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+    class Sentence8
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence8_Shevchenko";
+		speech[] = { "\Sounds\part1\part1_sentence8.wav" };
+		class Arguments {};
+		actor = "shevchenko";
+	};
+    class Sentence9
+	{
+		text = "$STR_VMF_C1_M1_Part1_Sentence9_Karpov";
+		speech[] = { "\Sounds\part1\part1_sentence9.wav" };
+		class Arguments {};
+		actor = "karpov";
+	};
+};
+
+class Arguments {};
+class Special {};
+startWithVocal[] = { hour };
+startWithConsonant[] = { europe, university };

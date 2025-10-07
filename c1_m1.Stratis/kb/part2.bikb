@@ -1,0 +1,15 @@
+class Sentences
+{
+    class Sentence1
+	{
+		text = "$STR_VMF_C1_M1_Part2_Sentence1_Gromov";
+		speech[] = { "\Sounds\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
+};
+
+class Arguments {};
+class Special {};
+startWithVocal[] = { hour };
+startWithConsonant[] = { europe, university };
