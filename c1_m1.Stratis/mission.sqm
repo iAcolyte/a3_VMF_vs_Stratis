@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=9;
+	toggles=1033;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5425.2295,27.197172,3740.1416};
-		dir[]={-0.76057673,-0.30775535,0.571679};
-		up[]={-0.24601148,0.95146543,0.18491176};
-		aside[]={0.60084069,-5.363836e-08,0.79937476};
+		pos[]={3265.5542,250.60417,2953.688};
+		dir[]={0.82962453,-0.54595125,-0.11696157};
+		up[]={0.54060763,0.83781499,-0.076215789};
+		aside[]={-0.13960186,-3.6787242e-08,-0.99021572};
 	};
 };
 binarizationWanted=0;
@@ -50,15 +50,13 @@ addons[]=
 	"A3_Characters_F_Common",
 	"A3_Static_F_Sams_SAM_System_03",
 	"A3_Soft_F_Gamma_Truck_01",
-	"A3_Static_F_Sams_Radar_System_01",
-	"A3_Characters_F_Jets",
-	"A3_Air_F_Gamma_Plane_Fighter_03"
+	"A3_Static_F_Sams_Radar_System_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=17;
+		items=15;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -162,28 +160,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
-		{
-			className="A3_Characters_F_Jets";
-			name="Arma 3 Jets - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item16
-		{
-			className="A3_Air_F_Gamma";
-			name="Arma 3 - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 dlcs[]=
 {
 	"RHS_AFRF",
 	"RHS_USAF",
-	"Expansion",
-	"Jets"
+	"Expansion"
 };
 randomSeed=4683237;
 class ScenarioData
@@ -279,7 +262,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=74;
+		items=72;
 		class Item0
 		{
 			dataType="Marker";
@@ -3918,88 +3901,6 @@ class Mission
 		class Item66
 		{
 			dataType="Group";
-			side="Independent";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8571.79,-0.018603152,8471.4941};
-						angles[]={0,3.248878,0};
-					};
-					side="Independent";
-					flags=2;
-					class Attributes
-					{
-					};
-					id=235;
-					type="I_Fighter_Pilot_F";
-					atlOffset=125.00996;
-				};
-				class Item1
-				{
-					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+38;
-					position[]={7770.7661,0.0062493803,648.84424};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=236;
-					type="Move";
-					atlOffset=120.39307;
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=235;
-						item1=234;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-				};
-			};
-			id=233;
-			atlOffset=1000;
-		};
-		class Item67
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8571.79,877.39276,8471.4043};
-				angles[]={0,3.248878,0};
-			};
-			side="Independent";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=234;
-			type="I_Plane_Fighter_03_dynamicLoadout_F";
-			atlOffset=1000;
-		};
-		class Item68
-		{
-			dataType="Group";
 			side="West";
 			class Entities
 			{
@@ -4013,12 +3914,13 @@ class Mission
 						angles[]={0.042478051,5.1306257,6.255693};
 					};
 					side="West";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=239;
 					type="B_UAV_AI";
+					atlOffset=17.314011;
 				};
 			};
 			class Attributes
@@ -4047,8 +3949,9 @@ class Mission
 				};
 			};
 			id=238;
+			atlOffset=-0.0015563965;
 		};
-		class Item69
+		class Item67
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4067,8 +3970,9 @@ class Mission
 			};
 			id=240;
 			type="B_Radar_System_01_F";
+			atlOffset=-0.0015563965;
 		};
-		class Item70
+		class Item68
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4083,8 +3987,9 @@ class Mission
 			};
 			id=241;
 			type="B_Truck_01_mover_F";
+			atlOffset=-0.0081329346;
 		};
-		class Item71
+		class Item69
 		{
 			dataType="Group";
 			side="West";
@@ -4100,13 +4005,13 @@ class Mission
 						angles[]={6.2432065,3.1801741,6.2706842};
 					};
 					side="West";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=243;
 					type="B_UAV_AI";
-					atlOffset=0.00015258789;
+					atlOffset=3.4321899;
 				};
 			};
 			class Attributes
@@ -4135,9 +4040,9 @@ class Mission
 				};
 			};
 			id=242;
-			atlOffset=0.00015258789;
+			atlOffset=-0.035369873;
 		};
-		class Item72
+		class Item70
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4156,7 +4061,7 @@ class Mission
 			};
 			id=244;
 			type="B_SAM_System_03_F";
-			atlOffset=0.00015258789;
+			atlOffset=-0.035369873;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -4212,7 +4117,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item73
+		class Item71
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4227,6 +4132,7 @@ class Mission
 			};
 			id=245;
 			type="B_Truck_01_mover_F";
+			atlOffset=-0.0020141602;
 		};
 	};
 	class Connections
