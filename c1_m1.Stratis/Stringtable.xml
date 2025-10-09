@@ -39,12 +39,20 @@
 				<Original>Sentence</Original>
 			</Key>
 			<Key ID="STR_VMF_C1_M1_Part1_Sentence10_Gromov">
-				<Russian>Разговорчики, офицеры. </Russian>
+				<Russian>Разговорчики, офицеры. Готовимся купаться. Перед прыжком - проткнуть лодку ножом. Я прыгаю, вы следом за мной...</Russian>
 				<Original>Sentence</Original>
 			</Key>
 
 			<Key ID="STR_VMF_C1_M1_Part2_Sentence1_Gromov">
 				<Russian>Лодки. Сбрасываем акваланги там.</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part2Bad_Sentence2_Morozov">
+				<Russian>Майор, с каких пор мы прёмся напрямую? А если бы тут была засада?</Russian>
+				<Original>Sentence</Original>
+			</Key>
+			<Key ID="STR_VMF_C1_M1_Part2Bad_Sentence3_Gromov">
+				<Russian>Потом обсудим, капитан</Russian>
 				<Original>Sentence</Original>
 			</Key>
 		</Container>

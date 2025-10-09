@@ -10,6 +10,17 @@ fnc_setDiver = {
 	_unit addGoggles "G_O_Diving";
 };
 
+fnc_playerLeaveBoat = {
+	doGetOut karpov;
+	[karpov] joinSilent group player;
+	msn_team1 joinSilent group player;
+	sleep 1;
+	{
+		doGetOut _x;
+		_x assignTeam "RED";
+	} forEach  msn_team1;
+};
+
 fnc_showText = {
 	params ['_l1', '_l2', '_l3','_delay'];                        
 		_l11 = _l1 call BIS_fnc_localize;                        
@@ -79,11 +90,12 @@ fnc_addSwapLoadoutAction = {
 };
 fnc_createCamp = {
 	msn_campCreated = true;
+	{_x hideObject false} forEach synchronizedObjects camp_trigger;
 };
 fnc_addCreateCampAction = {
 	[
 		player,														// Object the action is attached to
-		"Поменять снаряжение",													// Title of the action
+		"Разбить лагерь",													// Title of the action
 		"\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_unloadVehicle_ca.paa",	// Idle icon shown on screen
 		"\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_unloadVehicle_ca.paa",	// Progress icon shown on screen
 		"camp_task distance player < 6",									// Condition for the action to be shown
@@ -108,13 +120,49 @@ fnc_addCreateCampAction = {
 };
 
 fnc_kbStartPart2 = {
-	["Part2", "VMF_C1_M1","","DIRECT",{ true },[],1,true] spawn BIS_fnc_kbTell;
+	private _badEvent = triggerActivated trg_4a_bad_zone;
+	gromov	kbAddTopic ["part2", "kb\part2.bikb"];
+	morozov	kbAddTopic ["part2", "kb\part2.bikb"];
+	
+	gromov kbTell [player, "part2", "Sentence1"];
+	waitUntil {gromov kbWasSaid [player, "part2", "Sentence1", 3]};
+	if (_badEvent) then {
+		morozov kbTell [gromov, "part2", "Sentence2Bad"];
+		waitUntil {gromov kbWasSaid [player, "part2", "Sentence2Bad", 3]};
+		gromov kbTell [morozov, "part2", "Sentence3Bad"];
+		waitUntil {gromov kbWasSaid [player, "part2", "Sentence3Bad", 3]};
+	};
+
+	gromov kbRemoveTopic "part2";
+	morozov kbRemoveTopic "part2";
+	//["Part2", "VMF_C1_M1","","DIRECT",{ true },[],1,true] spawn BIS_fnc_kbTell;
 };
 
-fnc_skipDiving = {
+
+msn_activeWaypoint = nil;
+fnc_selectDestinationB = {
+	if (!isNil "msn_infiltration_b") then {
+		player removeAction msn_infiltration_b;
+		msn_infiltration_b = nil;
+	};
+	msn_infiltration_a =  player addAction ["Инфильтрация в точке A",{[] call fnc_selectDestinationA}];
+	[group player, 1] setWaypointPosition [getMarkerPos ["marker_travel_b", true],0];
+};
+fnc_selectDestinationA = {
+	if (!isNil "msn_infiltration_a") then {
+		player removeAction msn_infiltration_a;
+		msn_infiltration_a = nil;
+	};
+	msn_infiltration_b =  player addAction ["Инфильтрация в точке Б",{[] call fnc_selectDestinationB}];
+	[group player, 1] setWaypointPosition [getMarkerPos ["marker_travel_a", true],0];
+};
+
+fnc_addSkipDiving = {
+	hint "Вы можете совершить быстрое перемещение в точки инфильтрации. Выберите действие в меню";
+	[] call fnc_selectDestinationA;
 	msn_skip_diving = [
 		player,
-		"Пропустить путь до суши.",
+		"В точку инфильтрации",
 		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
 		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
 		"spn_boat1_destroyed",
@@ -126,9 +174,15 @@ fnc_skipDiving = {
 		{ 
 			player removeAction msn_skip_diving;
 			
-			skipTime 0.5;
+			
 			_groupUnits = units player;
-			_markerPos = getMarkerPos ["marker_travel", true];
+			_markerPos = if (isNil "msn_infiltration_a") then {
+				getMarkerPos ["marker_travel_a", true];
+			} else {
+				getMarkerPos ["marker_travel_b", true];
+			};
+			private _speed = 7.16952; // swim speed;
+			skipTime (((player distance _markerPos)/1000)/_speed);
 			for "_i" from 0 to count(_groupUnits) do { 
 				hintSilent str _i; 
 				_markerPos set [1,_markerPos#1+_i];
@@ -136,7 +190,9 @@ fnc_skipDiving = {
 			};
 			
 			[1, "BLACK", 4, 0] call BIS_fnc_fadeEffect;
-			["Точка входа А", [] call fnc_getDate, [] call fnc_getTimeStr] spawn fnc_showText;
+			if (isNil "msn_infiltration_a") then {player removeAction msn_infiltration_b; msn_infiltration_b = nil} else {player removeAction msn_infiltration_a; msn_infiltration_a = nil};
+			private _dest = if (isNil "msn_infiltration_a") then {"Точка входа А"} else {"Точка входа Б"};
+			[_dest, [] call fnc_getDate, [] call fnc_getTimeStr] spawn fnc_showText;
 		},
 		{
 			[1, "BLACK", 1, 0] spawn BIS_fnc_fadeEffect;

@@ -7,6 +7,18 @@ class Sentences
 		class Arguments {};
 		actor = "gromov";
 	};
+	class Sentence2Bad {
+		text = "$STR_VMF_C1_M1_Part2Bad_Sentence2_Morozov";
+		speech[] = { "\Sounds\silence_5sec.wav" };
+		class Arguments {};
+		actor = "morozov";
+	};
+	class Sentence3Bad {
+		text = "$STR_VMF_C1_M1_Part2Bad_Sentence3_Gromov";
+		speech[] = { "\Sounds\silence_5sec.wav" };
+		class Arguments {};
+		actor = "gromov";
+	};
 };
 
 class Arguments {};

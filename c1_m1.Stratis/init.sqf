@@ -1,6 +1,7 @@
 player setIdentity "Gromov";
 
 
+
 addWeaponPool ["rhs_weap_asval_grip",14];
 addWeaponPool ["rhs_weap_vss_grip",4];
 execVM "Scripts\functions.sqf";
