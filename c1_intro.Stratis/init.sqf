@@ -23,7 +23,6 @@ private _tellWithSubtitle = {
 		[name _speaker, localize _subtitle] spawn Bis_fnc_showSubtitle;
 		sleep 1;
 	};
-	hint "end";
 };
 
 

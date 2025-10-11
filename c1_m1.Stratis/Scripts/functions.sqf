@@ -1,3 +1,23 @@
+
+fnc_playerLeaveBoat = {
+	doGetOut karpov;
+	[karpov] joinSilent group player;
+	msn_team1 joinSilent group player;
+	sleep 1;
+	{
+		doGetOut _x;
+		_x assignTeam "RED";
+	} forEach  msn_team1;
+	msn_team2 joinSilent group player;
+	sleep 1;
+	{
+		doGetOut _x;
+		_x assignTeam "GREEN";
+	} forEach  msn_team2;
+	
+	shevchenko setUnitPos "AUTO";
+};
+
 fnc_setDiver = {
 	params["_unit"];
 	removeAllWeapons _unit;
@@ -10,16 +30,6 @@ fnc_setDiver = {
 	_unit addGoggles "G_O_Diving";
 };
 
-fnc_playerLeaveBoat = {
-	doGetOut karpov;
-	[karpov] joinSilent group player;
-	msn_team1 joinSilent group player;
-	sleep 1;
-	{
-		doGetOut _x;
-		_x assignTeam "RED";
-	} forEach  msn_team1;
-};
 
 fnc_showText = {
 	params ['_l1', '_l2', '_l3','_delay'];                        
@@ -50,7 +60,16 @@ fnc_getTimeStr = {
 	if (_dateTime#4<10) then {_minutesStr = "0" + _minutesStr;};
 	_hoursStr + ":" + _minutesStr; 
 };
-
+fnc_joinPlayer = {
+	params ["_teamArray","_groupName"];
+	[_teamArray#0] join grpNull;
+	_team = group (_teamArray#0);
+	_team setGroupId [_groupName];
+	for "_i" from 1 to count _teamArray do { 
+		[_teamArray#_i] join _team;
+	};
+	[_team, position player,player,false,""] call PC_fnc_wpPlatoonJoin;
+};
 fnc_loadStatuses = {
 	skipTime (15/60);
 	if (gromov loadStatus "gromovStatus")then {
@@ -58,16 +77,59 @@ fnc_loadStatuses = {
 		morozov loadStatus "morozovStatus";
 		ustinov loadStatus "ustinovStatus";
 		mironov loadStatus "mironovStatus";
+		medvedev loadStatus "medvedevStatus";
 		shevchenko loadStatus "shevchenkoStatus";
 	};
 	["Спустя 15 минут...", [] call fnc_getDate, [] call fnc_getTimeStr,2] spawn fnc_showText;
+
+	if (addon_pc_exists) then {
+		[msn_team1,"Дельфин-1"] call fnc_joinPlayer;
+		[msn_team2,"Дельфин-2"] call fnc_joinPlayer;
+	};
+
 	msn_group_rearmed = true;
 };
 
+fnc_setCreateCampTask = {
+	
+	private _position = if (isNil "msn_infiltration_a") then {
+		[group player, 3] setWaypointPosition [msn_old_wp_3,0];
+		msn_old_wp_3;
+	} else {
+		_pos = getMarkerPos ["marker_wp_alternative_2", true];
+		[group player, 3] setWaypointPosition [_pos,0];
+		_pos;
+	};
+	sleep 3;
+	[
+		player,
+		"t3",
+		["Уже почти утро. Необходимо разбить лагерь и оставаться там до наступления темноты.","Разбить лагерь"],
+		_position,
+		"ASSIGNED",
+		1,
+		true
+	] call BIS_fnc_taskCreate;
+	["t2","backpack"] call BIS_fnc_taskSetType;
+};
+
+
 fnc_addSwapLoadoutAction = {
+	params ["_storage"];
+	sleep 2;
+	[
+		player,
+		"t2",
+		["Необходимо снять гидрокостюмы и акваланги, достать вооружение и снаряжения.","Перевооружиться"],
+		position _storage,
+		"ASSIGNED",
+		2,
+		true
+	] call BIS_fnc_taskCreate;
+	["t2","box"] call BIS_fnc_taskSetType;
 		// adds the action to every client and JIP, but also adds it when it was already removed. E.g., Laptop has already been hacked by a player
 	[
-		boat_storage,														// Object the action is attached to
+		_storage,														// Object the action is attached to
 		"Поменять снаряжение",													// Title of the action
 		"\a3\missions_f_oldman\data\img\holdactions\holdAction_box_ca.paa",	// Idle icon shown on screen
 		"\a3\missions_f_oldman\data\img\holdactions\holdAction_box_ca.paa",	// Progress icon shown on screen
@@ -120,7 +182,8 @@ fnc_addCreateCampAction = {
 };
 
 fnc_kbStartPart2 = {
-	private _badEvent = triggerActivated trg_4a_bad_zone;
+	params["_trigger"];
+	private _badEvent = triggerActivated _trigger;
 	gromov	kbAddTopic ["part2", "kb\part2.bikb"];
 	morozov	kbAddTopic ["part2", "kb\part2.bikb"];
 	
@@ -140,6 +203,9 @@ fnc_kbStartPart2 = {
 
 
 msn_activeWaypoint = nil;
+msn_old_wp_1 = nil;
+msn_old_wp_2 = nil;
+msn_old_wp_3 = nil;
 fnc_selectDestinationB = {
 	if (!isNil "msn_infiltration_b") then {
 		player removeAction msn_infiltration_b;
@@ -147,6 +213,8 @@ fnc_selectDestinationB = {
 	};
 	msn_infiltration_a =  player addAction ["Инфильтрация в точке A",{[] call fnc_selectDestinationA}];
 	[group player, 1] setWaypointPosition [getMarkerPos ["marker_travel_b", true],0];
+	[group player, 2] setWaypointPosition [getMarkerPos ["marker_wp_alternative_1", true],0];
+	[group player, 3] setWaypointPosition [getMarkerPos ["marker_wp_alternative_2", true],0];
 };
 fnc_selectDestinationA = {
 	if (!isNil "msn_infiltration_a") then {
@@ -155,10 +223,15 @@ fnc_selectDestinationA = {
 	};
 	msn_infiltration_b =  player addAction ["Инфильтрация в точке Б",{[] call fnc_selectDestinationB}];
 	[group player, 1] setWaypointPosition [getMarkerPos ["marker_travel_a", true],0];
+	[group player, 2] setWaypointPosition [msn_old_wp_2,0];
+	[group player, 3] setWaypointPosition [msn_old_wp_3,0];
 };
 
 fnc_addSkipDiving = {
 	hint "Вы можете совершить быстрое перемещение в точки инфильтрации. Выберите действие в меню";
+	msn_old_wp_1 = getWPPos[group player,1];
+	msn_old_wp_2 = getWPPos[group player,2];
+	msn_old_wp_3 = getWPPos[group player,3];
 	[] call fnc_selectDestinationA;
 	msn_skip_diving = [
 		player,
@@ -184,7 +257,6 @@ fnc_addSkipDiving = {
 			private _speed = 7.16952; // swim speed;
 			skipTime (((player distance _markerPos)/1000)/_speed);
 			for "_i" from 0 to count(_groupUnits) do { 
-				hintSilent str _i; 
 				_markerPos set [1,_markerPos#1+_i];
 				_groupUnits#_i  setPos _markerPos;
 			};
@@ -203,5 +275,5 @@ fnc_addSkipDiving = {
 		true,
 		false
 	] call BIS_fnc_holdActionAdd;
-}
+};
 
