@@ -13,18 +13,35 @@ if (gromov saveStatus "gromovStatus") then {
 	shevchenko saveStatus "shevchenkoStatus";
 	[shevchenko] call fnc_setDiver;
 };
+
+
+{
+	// Current result is saved in variable _x
+	_x setSkill 1;
+} forEach units player;
 msn_team1 = [
 	morozov,
 	ustinov,
 	mironov,
-	shevchenko
+	medvedev
+];
+msn_team2 = [
+	shevchenko,
+	orlov,
+	romanov,
+	usuriev
 ];
 msn_team_player = [
 	gromov,
 	karpov
 ];
 msn_team1 join grpNull;
-[karpov] join grpNull;
+private _group = group (msn_team1#0); 
+msn_team2 join _group;
+[karpov] join _group;
+_group setFormation "FILE";
+_group setSpeedMode "LIMITED";
+
 
 group morozov setSpeedMode "LIMITED";
 morozov doMove getWPPos[player,1];
@@ -36,3 +53,5 @@ sleep 5;
 ["Part1", "VMF_C1_M1","","DIRECT",{ true },[],1,true] call BIS_fnc_kbTell;
 
 spn_boat1 lock false;
+hint "Вы можете покинуть лодку."
+saveGame;

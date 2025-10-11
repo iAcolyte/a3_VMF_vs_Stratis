@@ -62,7 +62,7 @@ randomSeed=16503440;
 class ScenarioData
 {
 	author="Acolyte";
-	overviewText="Командира 1-й группы 137 ОМРП СпН на Черноморском флоте, майора морской пехоты Громова Алексея Витальевича срочно отозвали из отпуска и вызвали на брифинг.";
+	overviewText="@STR_VMF_C1_Intro_Mission_Description";
 	overviewTextLocked="locked";
 	onLoadMission="@STR_VMF_C1_Intro_Mission_Description";
 	briefing=0;
