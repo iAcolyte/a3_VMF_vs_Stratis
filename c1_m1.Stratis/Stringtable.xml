@@ -1,6 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Project name="PC">
 	<Package name="VMF_STR">
+		<Container name="Missions">
+			<Key ID="STR_VMF_C1_M1_Mission_Name">
+				<Russian>Незванные гости</Russian>
+				<Original>Briefing</Original>
+			</Key>		
+			<Key ID="STR_VMF_C1_M1_Mission_Description">
+				<Russian>Группа спецназа ВМФ осуществляет проникновение на остров</Russian>
+				<Original>Briefing</Original>
+			</Key>
+		</Container>
+		<Container name="Identities">
+			<Key ID="STR_VMF_Identities_Gromov">
+				<Russian>Громов</Russian>
+				<Original>Gromov</Original>
+			</Key>
+			<Key ID="STR_VMF_Identities_Karpov">
+				<Russian>Карпов</Russian>
+				<Original>Karpov</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Morozov">
+				<Russian>Морозов</Russian>
+				<Original>Morozov</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Ustinov">
+				<Russian>Устинов</Russian>
+				<Original>Ustinov</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Mironov">
+				<Russian>Миронов</Russian>
+				<Original>Mironov</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Shevchenko">
+				<Russian>Шевченко</Russian>
+				<Original>Shevchenko</Original>
+			</Key>	
+		</Container>
 		<Container name="C1_M1">
 			<Key ID="STR_VMF_C1_M1_Part1_Sentence1_Gromov">
 				<Russian>Внимание всем, готовность две минуты. Ближе не пойдём, чтобы не спалить звук мотора.</Russian>

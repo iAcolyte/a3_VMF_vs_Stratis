@@ -66,9 +66,9 @@ class Sentences
 	class Sentence10
 	{
 		text = "$STR_VMF_C1_M1_Part1_Sentence10_Gromov";
-		speech[] = { "\Sounds\part1\part1_sentence9.wav" };
+		speech[] = { "\Sounds\silence_5sec.wav" };
 		class Arguments {};
-		actor = "karpov";
+		actor = "gromov";
 	};
 };
 

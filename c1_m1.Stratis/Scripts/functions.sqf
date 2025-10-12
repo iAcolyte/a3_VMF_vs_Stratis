@@ -14,8 +14,8 @@ fnc_playerLeaveBoat = {
 		doGetOut _x;
 		_x assignTeam "GREEN";
 	} forEach  msn_team2;
+	group player setSpeedMode "NORMAL";
 	
-	shevchenko setUnitPos "AUTO";
 };
 
 fnc_setDiver = {
@@ -60,6 +60,7 @@ fnc_getTimeStr = {
 	if (_dateTime#4<10) then {_minutesStr = "0" + _minutesStr;};
 	_hoursStr + ":" + _minutesStr; 
 };
+
 fnc_joinPlayer = {
 	params ["_teamArray","_groupName"];
 	[_teamArray#0] join grpNull;
@@ -88,34 +89,16 @@ fnc_loadStatuses = {
 	};
 
 	msn_group_rearmed = true;
-};
-
-fnc_setCreateCampTask = {
+	["t2","SUCCEEDED"] call BIS_fnc_taskSetState;
+	player addRating 100;
 	
-	private _position = if (isNil "msn_infiltration_a") then {
-		[group player, 3] setWaypointPosition [msn_old_wp_3,0];
-		msn_old_wp_3;
-	} else {
-		_pos = getMarkerPos ["marker_wp_alternative_2", true];
-		[group player, 3] setWaypointPosition [_pos,0];
-		_pos;
-	};
-	sleep 3;
-	[
-		player,
-		"t3",
-		["Уже почти утро. Необходимо разбить лагерь и оставаться там до наступления темноты.","Разбить лагерь"],
-		_position,
-		"ASSIGNED",
-		1,
-		true
-	] call BIS_fnc_taskCreate;
-	["t2","backpack"] call BIS_fnc_taskSetType;
+	sleep 5;
+	[] spawn fnc_setCreateCampTask;
 };
-
 
 fnc_addSwapLoadoutAction = {
 	params ["_storage"];
+	player addRating 100;
 	sleep 2;
 	[
 		player,
@@ -139,20 +122,78 @@ fnc_addSwapLoadoutAction = {
 			[0, "BLACK", 4, 0] spawn BIS_fnc_fadeEffect;
 		},																// Code executed when action starts
 		{},																// Code executed on every progress tick
-		{ [] call fnc_loadStatuses; [1, "BLACK", 4, 0] call BIS_fnc_fadeEffect; },							// Code executed on completion
+		{ 
+			[] call fnc_loadStatuses; 
+			[1, "BLACK", 4, 0] call BIS_fnc_fadeEffect;
+			saveGame;
+		},							// Code executed on completion
 		{
 			[1, "BLACK", 1, 0] call BIS_fnc_fadeEffect;
 		},																// Code executed on interrupted
 		[],																// Arguments passed to the scripts as _this select 3
 		4,																// Action duration in seconds
-		0,																// Priority
+		10,																// Priority
 		true,															// Remove on completion
 		false															// Show in unconscious state
 	] call BIS_fnc_holdActionAdd;
 };
+
+
+
+fnc_setCreateCampTask = {
+	private _position = if (triggerActivated trg_4a_boat_zone) then {
+		_pos = getPosATL camp_trigger_a;
+		[group player, 3] setWaypointPosition [getPosATL camp_trigger_a,0];
+		_pos;
+	} else {
+		_pos = getPosATL camp_trigger_b;
+		[group player, 3] setWaypointPosition [getPosATL camp_trigger_b,0];
+		_pos;
+	};
+	[
+		player,
+		"t3",
+		["Уже почти утро. Необходимо разбить лагерь и оставаться там до наступления темноты.","Разбить лагерь"],
+		_position,
+		"ASSIGNED",
+		1,
+		true
+	] call BIS_fnc_taskCreate;
+	["t3","backpack"] call BIS_fnc_taskSetType;
+};
+
+fnc_skipTo = { 
+	params["_targetHours","_targetMinutes"]; 
+	private _dateTime = date; 
+	private _hours = _dateTime#3; 
+	private _minutes = _dateTime#4; 
+	if (_targetHours<_hours) exitWith {};
+	
+	if (_targetHours == _hours && _minutes<=_targetMinutes) exitWith {};
+
+	_targetHours = _targetHours - _hours;
+	_targetMinutes = _targetMinutes-_minutes; 
+	
+
+	if (_targetMinutes < 0) then {  
+	_targetMinutes = _targetMinutes + 60;  
+	_targetHours = _targetHours - 1; 
+	};
+
+	_skipValue = _targetHours + (_targetMinutes/60); 
+
+	skipTime _skipValue;  
+};
+
+
 fnc_createCamp = {
+
 	msn_campCreated = true;
-	{_x hideObject false} forEach synchronizedObjects camp_trigger;
+	_trigger = if (triggerActivated trg_4a_boat_zone) then {camp_trigger_a} else {camp_trigger_b};
+	{_x hideObject false} forEach synchronizedObjects _trigger;
+	["t3","SUCCEEDED"] call BIS_fnc_taskSetState;
+	player addRating 100;
+	//{_x hideObject false} forEach synchronizedObjects camp_trigger;
 };
 fnc_addCreateCampAction = {
 	[
@@ -160,15 +201,19 @@ fnc_addCreateCampAction = {
 		"Разбить лагерь",													// Title of the action
 		"\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_unloadVehicle_ca.paa",	// Idle icon shown on screen
 		"\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_unloadVehicle_ca.paa",	// Progress icon shown on screen
-		"camp_task distance player < 6",									// Condition for the action to be shown
-		"camp_task distance player < 6",									// Condition for the action to progress
+		if (triggerActivated trg_4a_boat_zone) then {"(getPosATL camp_trigger_a) distance player < 6"} else {"(getPosATL camp_trigger_b) distance player < 6"},									// Condition for the action to be shown
+		if (triggerActivated trg_4a_boat_zone) then {"(getPosATL camp_trigger_a) distance player < 6"} else {"(getPosATL camp_trigger_b) distance player < 6"},								// Condition for the action to progress
 		{
 			[0, "BLACK", 4, 0] spawn BIS_fnc_fadeEffect;
 		},																// Code executed when action starts
 		{},																// Code executed on every progress tick
 		{ 
 			[] call fnc_createCamp; 
-			[1, "BLACK", 4, 0] call BIS_fnc_fadeEffect; 
+			[7,58] call fnc_skipTo;
+			["Время связи с 'Касаткой'", [] call fnc_getDate, [] call fnc_getTimeStr] spawn fnc_showText;
+			[1, "BLACK", 4, 0] call BIS_fnc_fadeEffect;
+			sleep 1;
+			[0, "BLACK", 5, 1,"","END1"] spawn BIS_fnc_fadeEffect;
 		},							// Code executed on completion
 		{
 			[1, "BLACK", 1, 0] call BIS_fnc_fadeEffect;
@@ -211,7 +256,7 @@ fnc_selectDestinationB = {
 		player removeAction msn_infiltration_b;
 		msn_infiltration_b = nil;
 	};
-	msn_infiltration_a =  player addAction ["Инфильтрация в точке A",{[] call fnc_selectDestinationA}];
+	msn_infiltration_a =  player addAction ["Инфильтрация в точке A",{[] call fnc_selectDestinationA},[],5];
 	[group player, 1] setWaypointPosition [getMarkerPos ["marker_travel_b", true],0];
 	[group player, 2] setWaypointPosition [getMarkerPos ["marker_wp_alternative_1", true],0];
 	[group player, 3] setWaypointPosition [getMarkerPos ["marker_wp_alternative_2", true],0];
@@ -221,7 +266,7 @@ fnc_selectDestinationA = {
 		player removeAction msn_infiltration_a;
 		msn_infiltration_a = nil;
 	};
-	msn_infiltration_b =  player addAction ["Инфильтрация в точке Б",{[] call fnc_selectDestinationB}];
+	msn_infiltration_b =  player addAction ["Инфильтрация в точке Б",{[] call fnc_selectDestinationB},[],5];
 	[group player, 1] setWaypointPosition [getMarkerPos ["marker_travel_a", true],0];
 	[group player, 2] setWaypointPosition [msn_old_wp_2,0];
 	[group player, 3] setWaypointPosition [msn_old_wp_3,0];
@@ -260,9 +305,8 @@ fnc_addSkipDiving = {
 				_markerPos set [1,_markerPos#1+_i];
 				_groupUnits#_i  setPos _markerPos;
 			};
-			
+			if (isNil "msn_infiltration_a") then {player removeAction msn_infiltration_b;} else {player removeAction msn_infiltration_a;};
 			[1, "BLACK", 4, 0] call BIS_fnc_fadeEffect;
-			if (isNil "msn_infiltration_a") then {player removeAction msn_infiltration_b; msn_infiltration_b = nil} else {player removeAction msn_infiltration_a; msn_infiltration_a = nil};
 			private _dest = if (isNil "msn_infiltration_a") then {"Точка входа А"} else {"Точка входа Б"};
 			[_dest, [] call fnc_getDate, [] call fnc_getTimeStr] spawn fnc_showText;
 		},
@@ -271,7 +315,7 @@ fnc_addSkipDiving = {
 		},
 		[],
 		4,
-		0,
+		10,
 		true,
 		false
 	] call BIS_fnc_holdActionAdd;
