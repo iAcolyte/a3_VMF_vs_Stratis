@@ -62,6 +62,43 @@ class CfgIdentities
 		pitch = 1.0;
 		speaker = "Male02RUS";
 	};
+
+	class Medvedev
+	{
+		face = "RussianHead_3";
+		glasses = "";
+		name = "$STR_VMF_Identities_Medvedev";
+		nameSound = "Medvedev";
+		pitch = 1.0;
+		speaker = "Male02RUS";
+	};
+	class Usuriev
+	{
+		face = "RussianHead_3";
+		glasses = "";
+		name = "$STR_VMF_Identities_Usuriev";
+		nameSound = "Usuriev";
+		pitch = 1.0;
+		speaker = "Male02RUS";
+	};
+	class Romanov
+	{
+		face = "RussianHead_3";
+		glasses = "";
+		name = "$STR_VMF_Identities_Romanov";
+		nameSound = "Romanov";
+		pitch = 1.0;
+		speaker = "Male02RUS";
+	};
+	class Orlov
+	{
+		face = "RussianHead_3";
+		glasses = "";
+		name = "$STR_VMF_Identities_Orlov";
+		nameSound = "Orlov";
+		pitch = 1.0;
+		speaker = "Male02RUS";
+	};
 	// STR_VMF_Identities_Mironov
 };
 

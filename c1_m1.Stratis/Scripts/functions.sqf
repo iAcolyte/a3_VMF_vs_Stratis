@@ -80,7 +80,16 @@ fnc_loadStatuses = {
 		mironov loadStatus "mironovStatus";
 		medvedev loadStatus "medvedevStatus";
 		shevchenko loadStatus "shevchenkoStatus";
+		orlov loadStatus "orlovStatus";
+		romanov loadStatus "romanovStatus";
+		usuriev loadStatus "usurievStatus";
 	};
+	{
+		if (isNull unitBackpack  _x) then {
+			_x addBackpack "B_Bergen_tna_F";
+		};
+	} forEach units player;
+
 	["Спустя 15 минут...", [] call fnc_getDate, [] call fnc_getTimeStr,2] spawn fnc_showText;
 
 	if (addon_pc_exists) then {
@@ -189,6 +198,22 @@ fnc_skipTo = {
 fnc_createCamp = {
 
 	msn_campCreated = true;
+	{
+		if (backpack _x == "B_Bergen_tna_F") then {
+			removeBackpack _x;
+		};
+	} forEach units player;
+	{
+		if (backpack _x == "B_Bergen_tna_F") then {
+			removeBackpack _x;
+		};
+	} forEach msn_team1;
+	{
+		if (backpack _x == "B_Bergen_tna_F") then {
+			removeBackpack _x;
+		};
+	} forEach msn_team2;
+
 	_trigger = if (triggerActivated trg_4a_boat_zone) then {camp_trigger_a} else {camp_trigger_b};
 	{_x hideObject false} forEach synchronizedObjects _trigger;
 	["t3","SUCCEEDED"] call BIS_fnc_taskSetState;
@@ -214,6 +239,7 @@ fnc_addCreateCampAction = {
 			[1, "BLACK", 4, 0] call BIS_fnc_fadeEffect;
 			sleep 1;
 			[0, "BLACK", 5, 1,"","END1"] spawn BIS_fnc_fadeEffect;
+			
 		},							// Code executed on completion
 		{
 			[1, "BLACK", 1, 0] call BIS_fnc_fadeEffect;

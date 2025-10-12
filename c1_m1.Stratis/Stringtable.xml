@@ -36,6 +36,22 @@
 				<Russian>Шевченко</Russian>
 				<Original>Shevchenko</Original>
 			</Key>	
+			<Key ID="STR_VMF_Identities_Medvedev">
+				<Russian>Медведев</Russian>
+				<Original>Medvedev</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Usuriev">
+				<Russian>Усуриев</Russian>
+				<Original>Usuriev</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Romanov">
+				<Russian>Романов</Russian>
+				<Original>Romanov</Original>
+			</Key>	
+			<Key ID="STR_VMF_Identities_Orlov">
+				<Russian>Орлов</Russian>
+				<Original>Orlov</Original>
+			</Key>	
 		</Container>
 		<Container name="C1_M1">
 			<Key ID="STR_VMF_C1_M1_Part1_Sentence1_Gromov">

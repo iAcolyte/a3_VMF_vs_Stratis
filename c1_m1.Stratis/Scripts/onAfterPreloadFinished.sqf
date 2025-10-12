@@ -10,8 +10,16 @@ if (gromov saveStatus "gromovStatus") then {
 	[ustinov] call fnc_setDiver;
 	mironov saveStatus "mironovStatus";
 	[mironov] call fnc_setDiver;
+	medvedev saveStatus "medvedevStatus";
+	[medvedev] call fnc_setDiver;
 	shevchenko saveStatus "shevchenkoStatus";
 	[shevchenko] call fnc_setDiver;
+	orlov saveStatus "orlovStatus";
+	[orlov] call fnc_setDiver;
+	romanov saveStatus "romanovStatus";
+	[romanov] call fnc_setDiver;
+	usuriev saveStatus "usurievStatus";
+	[usuriev] call fnc_setDiver;
 };
 
 
