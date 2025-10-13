@@ -3,19 +3,18 @@ fnc_playerLeaveBoat = {
 	doGetOut karpov;
 	[karpov] joinSilent group player;
 	msn_team1 joinSilent group player;
+	msn_team2 joinSilent group player;
 	sleep 1;
 	{
 		doGetOut _x;
 		_x assignTeam "RED";
 	} forEach  msn_team1;
-	msn_team2 joinSilent group player;
 	sleep 1;
 	{
 		doGetOut _x;
 		_x assignTeam "GREEN";
 	} forEach  msn_team2;
 	group player setSpeedMode "NORMAL";
-	
 };
 
 fnc_setDiver = {
