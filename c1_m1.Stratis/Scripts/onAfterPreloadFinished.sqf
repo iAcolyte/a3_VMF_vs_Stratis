@@ -57,6 +57,10 @@ removeMissionEventHandler ["PreloadFinished",msn_preloadFinishedHandle];
 msn_preloadFinishedHandle = nil;
 ["Акватория острова Стратис",[] call fnc_getDate, [] call fnc_getTimeStr, 5] spawn fnc_showText;
 
+clearItemPool;
+clearWeaponPool;
+clearMagazinePool;
+
 sleep 5;
 ["Part1", "VMF_C1_M1","","DIRECT",{ true },[],1,true] call BIS_fnc_kbTell;
 

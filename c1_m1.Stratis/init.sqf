@@ -2,8 +2,8 @@ player setIdentity "Gromov";
 
 
 addon_pc_exists = isClass (configFile >> "CfgPatches" >> "Addon_PC");
-addWeaponPool ["rhs_weap_asval_grip",14];
-addWeaponPool ["rhs_weap_vss_grip",4];
+
+pickWeaponPool msn_pool_startAmmo;
 execVM "Scripts\functions.sqf";
 
 msn_preload_finished = false;

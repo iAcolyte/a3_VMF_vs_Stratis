@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=552;
+		nextID=553;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4343.3262,249.85333,3777.3945};
-		dir[]={0.66502881,-0.72373188,-0.18425219};
-		up[]={0.69745779,0.69008124,-0.19323692};
-		aside[]={-0.26700068,0,-0.96369636};
+		pos[]={7052.0371,23.512514,5938.8628};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -35,6 +35,7 @@ addons[]=
 	"rhs_c_weapons",
 	"A3_Weapons_F",
 	"rhs_c_troops",
+	"Ibragim_AdvancedUseOfRemoteExplosives",
 	"A3_Weapons_F_Explosives",
 	"A3_Characters_F",
 	"A3_Weapons_F_Items",
@@ -67,7 +68,8 @@ addons[]=
 	"RHS_US_A2_AirImport",
 	"rhsusf_c_m113",
 	"rhsusf_vehicles",
-	"rhsusf_c_fmtv"
+	"rhsusf_c_fmtv",
+	"A3_Weapons_F_Ammoboxes"
 };
 class AddonsMetaData
 {
@@ -378,7 +380,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=171;
+		items=172;
 		class Item0
 		{
 			dataType="Marker";
@@ -8759,7 +8761,7 @@ class Mission
 			};
 			id=339;
 			type="CUP_I_SearchLight_static_RACS";
-			atlOffset=0.011016846;
+			atlOffset=0.20274353;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8793,7 +8795,7 @@ class Mission
 			};
 			id=340;
 			type="CUP_I_SearchLight_static_RACS";
-			atlOffset=0.021286011;
+			atlOffset=0.047180176;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8827,7 +8829,7 @@ class Mission
 			};
 			id=341;
 			type="CUP_I_SearchLight_static_RACS";
-			atlOffset=0.19592285;
+			atlOffset=0.18234253;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14532,7 +14534,7 @@ class Mission
 						angles[]={0,1.311433,0};
 					};
 					side="Independent";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						class Inventory
@@ -14610,7 +14612,7 @@ class Mission
 					};
 					id=394;
 					type="I_soldier_F";
-					atlOffset=0.0039672852;
+					atlOffset=4.2807999;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14920,7 +14922,7 @@ class Mission
 				};
 			};
 			id=393;
-			atlOffset=0.0039672852;
+			atlOffset=4.2807999;
 		};
 		class Item122
 		{
@@ -14931,13 +14933,12 @@ class Mission
 				angles[]={0,0.93739259,0};
 			};
 			side="Independent";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=396;
 			type="CUP_I_SearchLight_static_RACS";
-			atlOffset=0.010253906;
+			atlOffset=4.4105759;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15063,7 +15064,7 @@ class Mission
 					};
 					id=398;
 					type="I_soldier_F";
-					atlOffset=2.3668365;
+					atlOffset=3.1803818;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15373,7 +15374,7 @@ class Mission
 				};
 			};
 			id=397;
-			atlOffset=2.3668365;
+			atlOffset=3.1803818;
 		};
 		class Item124
 		{
@@ -15384,13 +15385,12 @@ class Mission
 				angles[]={0,5.115849,6.2826972};
 			};
 			side="Independent";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=400;
 			type="CUP_I_SearchLight_static_RACS";
-			atlOffset=0.052528381;
+			atlOffset=3.3264008;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24768,6 +24768,40 @@ class Mission
 			id=225;
 			type="B_Truck_01_mover_F";
 			atlOffset=-0.00076293945;
+		};
+		class Item171
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7055.7261,13.827308,5948.1069};
+				angles[]={0.059934605,0,0.37835246};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="msn_pool_startAmmo";
+			};
+			id=552;
+			type="Box_NATO_Wps_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
