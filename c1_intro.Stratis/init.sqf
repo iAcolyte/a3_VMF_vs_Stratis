@@ -28,6 +28,8 @@ private _tellWithSubtitle = {
 
 //ShowHUD true;
 enableEnvironment false;
+//cutText ["", "BLACK FADED", 2.5]; 
+//[0, 2, true, true] call BIS_fnc_cinemaBorder;
 
 gromov setIdentity "Gromov";
 griev setIdentity "Griev";

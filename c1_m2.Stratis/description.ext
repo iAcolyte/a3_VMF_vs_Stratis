@@ -102,6 +102,8 @@ class CfgIdentities
 	// STR_VMF_Identities_Mironov
 };
 
+#include "hints.hpp"
+
 // class CfgSentences
 // {
 // 	class VMF_C1_M1
