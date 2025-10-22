@@ -10,3 +10,5 @@ shevchenko saveStatus "shevchenkoStatus";
 orlov saveStatus "orlovStatus";
 romanov saveStatus "romanovStatus";
 usuriev saveStatus "usurievStatus";
+
+profileNamespace setVariable ["iacolyte_vmf_c1_m1_camp_position", if (triggerActivated trg_4a_boat_zone) then {"a"} else {"b"}]
